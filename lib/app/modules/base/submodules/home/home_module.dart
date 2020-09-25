@@ -1,4 +1,6 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:hasura_connect/hasura_connect.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../core/constants/constants.dart';
 import 'home_controller.dart';
@@ -10,13 +12,19 @@ class HomeModule extends WidgetModule {
   List<Bind> get binds => [
         $HomeRepository,
         $HomeController,
+        Bind(
+          (i) => HasuraConnect(
+            DataConst.hasuraUrl,
+            localStorageDelegate: () => LocalStorageSharedPreferences(),
+          ),
+        ),
       ];
 
   @override
   List<ModularRouter> get routers => [
         ModularRouter(
           RoutersConst.home,
-          module: HomeModule(),
+          child: (_, args) => HomePage(),
           transition: TransitionType.fadeIn,
         ),
       ];

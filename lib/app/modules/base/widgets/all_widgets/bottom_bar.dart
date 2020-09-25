@@ -53,21 +53,6 @@ class BottomBar extends StatelessWidget {
               unselectedBackgroundColor:
                   Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
-            FlipBoxNavigationBarItem(
-              name: "Informações",
-              selectedIcon: FontAwesomeIcons.solidLightbulb,
-              unselectedIcon: FontAwesomeIcons.lightbulb,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-            ),
-            FlipBoxNavigationBarItem(
-              name: "Doação",
-              selectedIcon: FlutterIcons.hand_holding_usd_faw5s,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-            ),
           ],
         ),
       );

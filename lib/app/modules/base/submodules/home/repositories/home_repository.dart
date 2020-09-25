@@ -1,5 +1,9 @@
-import 'package:dio/native_imp.dart';
+import 'package:dio/dio.dart';
+import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:hasura_connect/hasura_connect.dart';
+import '../../../../../core/documents/documents.dart';
+import '../../../../../core/models/models.dart';
 
 import 'interfaces/home_repository_interface.dart';
 
@@ -7,17 +11,18 @@ part 'home_repository.g.dart';
 
 @Injectable()
 class HomeRepository implements IHomeRepository {
-  final DioForNative client;
+  final HasuraConnect connect;
+  final Dio client;
 
-  HomeRepository(this.client);
+  HomeRepository(this.connect, this.client);
 
-  Future fetchPost() async {
-    final response =
-        await client.get('https://jsonplaceholder.typicode.com/posts/1');
-    return response.data;
-  }
+  @override
+  Stream<List<NewsModel>> getFeaturedNews() => connect
+      .subscription(getFeaturedNewsSubscription)
+      .map((event) => (event['data']['news'] as List)
+          .map((json) => NewsModel.fromJson(json))
+          .toList());
 
-  //dispose will be called automatically
   @override
   void dispose() {}
 }

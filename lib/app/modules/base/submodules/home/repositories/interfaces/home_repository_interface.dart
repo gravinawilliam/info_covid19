@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import '../../../../../../core/models/models.dart';
 
 abstract class IHomeRepository implements Disposable {
-  Future fetchPost();
+  Stream<List<NewsModel>> getFeaturedNews();
 }
