@@ -3,7 +3,17 @@ import 'package:info_covid19/app/modules/base/submodules/home/widgets/widgets.da
 import '../../../../../../core/constants/constants.dart';
 
 class CardsDataCovid19 extends StatelessWidget {
-  const CardsDataCovid19({Key key}) : super(key: key);
+  final int ativos;
+  final int casosConfirmados;
+  final int recuperados;
+  final int obitos;
+
+  const CardsDataCovid19({
+    this.ativos,
+    this.casosConfirmados,
+    this.recuperados,
+    this.obitos,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,32 +25,26 @@ class CardsDataCovid19 extends StatelessWidget {
           CardDataCovid19(
             color: Colors.green[900],
             width: 0.475,
-            title: "Ativos",
-            quantidade: "200",
+            title: "Casos Confirmados",
+            quantidade: casosConfirmados.toString(),
           ),
           CardDataCovid19(
             color: Colors.deepPurple,
             width: 0.475,
-            title: "Ativos",
-            quantidade: "200",
+            title: "Recuperados",
+            quantidade: recuperados.toString(),
           ),
           CardDataCovid19(
             color: Colors.pinkAccent,
-            width: 0.3,
+            width: 0.475,
             title: "Ativos",
-            quantidade: "200",
-          ),
-          CardDataCovid19(
-            color: Colors.blueAccent,
-            width: 0.3,
-            title: "Ativos",
-            quantidade: "200",
+            quantidade: ativos.toString(),
           ),
           CardDataCovid19(
             color: Colors.redAccent,
-            width: 0.3,
-            title: "Ativos",
-            quantidade: "200",
+            width: 0.475,
+            title: "Obitos",
+            quantidade: obitos.toString(),
           ),
         ],
       ),

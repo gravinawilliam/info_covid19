@@ -12,9 +12,9 @@ part 'home_repository.g.dart';
 @Injectable()
 class HomeRepository implements IHomeRepository {
   final HasuraConnect connect;
-  final Dio client;
+  final Dio dio = Dio();
 
-  HomeRepository(this.connect, this.client);
+  HomeRepository(this.connect);
 
   @override
   Stream<List<NewsModel>> getFeaturedNews() => connect
@@ -22,6 +22,26 @@ class HomeRepository implements IHomeRepository {
       .map((event) => (event['data']['news'] as List)
           .map((json) => NewsModel.fromJson(json))
           .toList());
+
+  @override
+  Future<CountryModel> getDataCountry() async {
+    dio.interceptors.add(
+      DioCacheManager(CacheConfig(
+        baseUrl:
+            "https://disease.sh/v3/covid-19/countries/brazil?yesterday=true&twoDaysAgo=false&strict=true&allowNull=true",
+      )).interceptor,
+    );
+    final response = await dio.get(
+        "https://disease.sh/v3/covid-19/countries/brazil?yesterday=true&twoDaysAgo=false&strict=true&allowNull=true",
+        options: buildCacheOptions(
+          Duration(hours: 12),
+        ));
+    if (response.statusCode != 200) {
+      throw Exception();
+    } else {
+      return CountryModel.fromJson(response.data);
+    }
+  }
 
   @override
   void dispose() {}

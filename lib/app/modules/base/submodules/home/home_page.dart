@@ -19,21 +19,27 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
     SizeConst().init(context);
-    return Scaffold(
-      body: Container(
-        height: SizeConst.screenHeight,
-        width: SizeConst.screenWidth,
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              FeaturedNews(controller: controller),
-              TestCovid19(),
-              GraphDataCovid19(controller: controller),
-            ],
-          ),
-        ),
-      ),
+    return Observer(
+      builder: (_) {
+        return Scaffold(
+          body: (controller.countryModel != null)
+              ? Container(
+                  height: SizeConst.screenHeight,
+                  width: SizeConst.screenWidth,
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                      children: [
+                        FeaturedNews(controller: controller),
+                        TestCovid19(),
+                        GraphDataCovid19(controller: controller),
+                      ],
+                    ),
+                  ),
+                )
+              : Center(child: CircularProgressIndicator()),
+        );
+      },
     );
   }
 }

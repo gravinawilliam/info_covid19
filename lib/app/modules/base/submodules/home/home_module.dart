@@ -18,6 +18,7 @@ class HomeModule extends WidgetModule {
             localStorageDelegate: () => LocalStorageSharedPreferences(),
           ),
         ),
+        Bind((i) => Dio()),
       ];
 
   @override

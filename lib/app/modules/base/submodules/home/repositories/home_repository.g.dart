@@ -7,7 +7,7 @@ part of 'home_repository.dart';
 // **************************************************************************
 
 final $HomeRepository = BindInject(
-  (i) => HomeRepository(i<HasuraConnect>(), i<Dio>()),
+  (i) => HomeRepository(i<HasuraConnect>()),
   singleton: true,
   lazy: true,
 );

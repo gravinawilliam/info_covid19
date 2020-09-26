@@ -3,4 +3,5 @@ import '../../../../../../core/models/models.dart';
 
 abstract class IHomeRepository implements Disposable {
   Stream<List<NewsModel>> getFeaturedNews();
+  Future<CountryModel> getDataCountry();
 }

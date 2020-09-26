@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:info_covid19/app/modules/base/submodules/home/home_status.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../core/models/models.dart';
@@ -11,12 +13,16 @@ class HomeController = _HomeControllerBase with _$HomeController;
 abstract class _HomeControllerBase with Store {
   _HomeControllerBase(IHomeRepository this.repository) {
     getListFeaturedNews();
+    getDataCountry();
   }
 
   final IHomeRepository repository;
 
   @observable
   ObservableStream<List<NewsModel>> newsList;
+
+  @observable
+  CountryModel countryModel;
 
   @action
   void getListFeaturedNews() {
@@ -27,5 +33,14 @@ abstract class _HomeControllerBase with Store {
   double calculaPorcentagem(int casosConfirmados, int dados) {
     var resultado = ((dados * 100) / casosConfirmados);
     return resultado;
+  }
+
+  @action
+  getDataCountry() async {
+    try {
+      countryModel = await repository.getDataCountry();
+    } catch (exception) {
+      return CircularProgressIndicator();
+    }
   }
 }

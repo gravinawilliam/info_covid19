@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:info_covid19/app/core/constants/constants.dart';
+import 'package:info_covid19/app/core/models/models.dart';
 import 'package:info_covid19/app/modules/base/submodules/home/home_controller.dart';
 
 import '../widgets.dart';
@@ -21,16 +23,24 @@ class GraphDataCovid19 extends StatelessWidget {
       width: SizeConst.screenWidth,
       child: Column(
         children: [
-          LocaleGraph(),
-          CardsDataCovid19(),
-          Grafico(
-            populacao: 220,
-            ativos: 330,
-            casosConfirmados: 444,
-            recuperados: 123,
-            mortes: 312,
-            controller: controller,
+          LocaleGraph(
+            bandeiraUrl: controller.countryModel.countryInfo.flag,
+            name: controller.countryModel.country,
           ),
+          CardsDataCovid19(
+            ativos: controller.countryModel.active,
+            casosConfirmados: controller.countryModel.cases,
+            obitos: controller.countryModel.deaths,
+            recuperados: controller.countryModel.recovered,
+          ),
+          Grafico(
+            populacao: controller.countryModel.population,
+            ativos: controller.countryModel.active,
+            casosConfirmados: controller.countryModel.cases,
+            recuperados: controller.countryModel.recovered,
+            mortes: controller.countryModel.deaths,
+            controller: controller,
+          )
         ],
       ),
     );

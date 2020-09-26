@@ -34,6 +34,29 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
+  final _$countryModelAtom = Atom(name: '_HomeControllerBase.countryModel');
+
+  @override
+  CountryModel get countryModel {
+    _$countryModelAtom.reportRead();
+    return super.countryModel;
+  }
+
+  @override
+  set countryModel(CountryModel value) {
+    _$countryModelAtom.reportWrite(value, super.countryModel, () {
+      super.countryModel = value;
+    });
+  }
+
+  final _$getDataCountryAsyncAction =
+      AsyncAction('_HomeControllerBase.getDataCountry');
+
+  @override
+  Future getDataCountry() {
+    return _$getDataCountryAsyncAction.run(() => super.getDataCountry());
+  }
+
   final _$_HomeControllerBaseActionController =
       ActionController(name: '_HomeControllerBase');
 
@@ -49,9 +72,21 @@ mixin _$HomeController on _HomeControllerBase, Store {
   }
 
   @override
+  double calculaPorcentagem(int casosConfirmados, int dados) {
+    final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
+        name: '_HomeControllerBase.calculaPorcentagem');
+    try {
+      return super.calculaPorcentagem(casosConfirmados, dados);
+    } finally {
+      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-newsList: ${newsList}
+newsList: ${newsList},
+countryModel: ${countryModel}
     ''';
   }
 }

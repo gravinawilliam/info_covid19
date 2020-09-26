@@ -29,12 +29,14 @@ class CardDataCovid19 extends StatelessWidget {
         children: [
           Text(
             title,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 22,
             ),
           ),
           Text(
             quantidade,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18,
             ),
