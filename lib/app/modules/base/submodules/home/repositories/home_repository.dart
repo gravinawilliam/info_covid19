@@ -1,5 +1,9 @@
-import 'package:dio/native_imp.dart';
+import 'package:dio/dio.dart';
+import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:hasura_connect/hasura_connect.dart';
+import '../../../../../core/documents/documents.dart';
+import '../../../../../core/models/models.dart';
 
 import 'interfaces/home_repository_interface.dart';
 
@@ -7,17 +11,38 @@ part 'home_repository.g.dart';
 
 @Injectable()
 class HomeRepository implements IHomeRepository {
-  final DioForNative client;
+  final HasuraConnect connect;
+  final Dio dio = Dio();
 
-  HomeRepository(this.client);
+  HomeRepository(this.connect);
 
-  Future fetchPost() async {
-    final response =
-        await client.get('https://jsonplaceholder.typicode.com/posts/1');
-    return response.data;
+  @override
+  Stream<List<NewsModel>> getFeaturedNews() => connect
+      .subscription(getFeaturedNewsSubscription)
+      .map((event) => (event['data']['news'] as List)
+          .map((json) => NewsModel.fromJson(json))
+          .toList());
+
+  @override
+  Future<CountryModel> getDataCountry() async {
+    dio.interceptors.add(
+      DioCacheManager(CacheConfig(
+        baseUrl:
+            "https://disease.sh/v3/covid-19/countries/brazil?yesterday=true&twoDaysAgo=false&strict=true&allowNull=true",
+      )).interceptor,
+    );
+    final response = await dio.get(
+        "https://disease.sh/v3/covid-19/countries/brazil?yesterday=true&twoDaysAgo=false&strict=true&allowNull=true",
+        options: buildCacheOptions(
+          Duration(hours: 12),
+        ));
+    if (response.statusCode != 200) {
+      throw Exception();
+    } else {
+      return CountryModel.fromJson(response.data);
+    }
   }
 
-  //dispose will be called automatically
   @override
   void dispose() {}
 }

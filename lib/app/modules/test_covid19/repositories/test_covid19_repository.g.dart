@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_repository.dart';
+part of 'test_covid19_repository.dart';
 
 // **************************************************************************
 // InjectionGenerator
 // **************************************************************************
 
-final $HomeRepository = BindInject(
-  (i) => HomeRepository(i<HasuraConnect>()),
+final $TestCovid19Repository = BindInject(
+  (i) => TestCovid19Repository(i<DioForNative>()),
   singleton: true,
   lazy: true,
 );
