@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/home_status.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../core/models/models.dart';
