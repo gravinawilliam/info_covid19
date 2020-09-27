@@ -22,7 +22,10 @@ class TestCovid19 extends StatelessWidget {
       width: SizeConst.screenWidth,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Theme.of(context).accentColor,
+        border: Border.all(
+          color: Theme.of(context).primaryColor,
+          width: 3,
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -42,23 +45,23 @@ class TestCovid19 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  "Como você está se sentido?",
+                  "Como você está se sentindo?",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.getFont(
-                    'Bangers',
-                    fontSize: 32,
-                  ),
+                  style: Theme.of(context).textTheme.headline3.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 23,
+                      ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ButtonStateTestCovid19(
-                      color: Colors.green[500],
+                      color: IconsColorsConst.good,
                       icons: Ionicons.ios_happy,
                       onTap: () {},
                     ),
                     ButtonStateTestCovid19(
-                      color: Colors.redAccent,
+                      color: IconsColorsConst.bad,
                       icons: Ionicons.ios_sad,
                       onTap: () => Modular.to.pushNamed(
                         RoutersConst.testCovid19,

@@ -8,7 +8,6 @@ class SizeConst {
   static double paddingVertical;
   static double statusBar;
 
-
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
     statusBar = _mediaQueryData.padding.top;

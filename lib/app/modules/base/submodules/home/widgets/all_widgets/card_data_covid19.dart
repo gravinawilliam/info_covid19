@@ -32,6 +32,7 @@ class CardDataCovid19 extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 22,
+              color: Colors.white,
             ),
           ),
           Text(
@@ -39,6 +40,7 @@ class CardDataCovid19 extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 18,
+              color: Colors.white,
             ),
           ),
         ],

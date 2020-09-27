@@ -27,40 +27,64 @@ abstract class _AppControllerBase with Store {
     if (isDark) {
       themeType = ThemeData(
         brightness: Brightness.light,
-        appBarTheme: AppBarTheme(
-          color: LightColorsConst.backgroundBottomBar,
-        ),
+        accentColor: LightColorsConst.accent,
+        accentColorBrightness: Brightness.light,
+        primaryColor: LightColorsConst.primary,
         scaffoldBackgroundColor: LightColorsConst.backgroundScaffold,
+        backgroundColor: LightColorsConst.backgroundColor,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: LightColorsConst.backgroundBottomBar,
           selectedItemColor: LightColorsConst.selected,
           unselectedItemColor: LightColorsConst.notSelected,
+          selectedIconTheme: IconThemeData(
+            color: LightColorsConst.selected,
+            size: 32,
+          ),
+          elevation: 4,
         ),
         textTheme: TextTheme(
-          headline2: TextStyle(
+          headline1: TextStyle(
             color: LightColorsConst.text,
+            fontFamily: FontsConst.title,
+            fontSize: 23,
+          ),
+          headline3: TextStyle(
+            color: LightColorsConst.text,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
           ),
         ),
-        primaryColor: LightColorsConst.primary,
       );
     } else {
       themeType = ThemeData(
         brightness: Brightness.dark,
-        appBarTheme: AppBarTheme(
-          color: DarkColorsConst.backgroundBottomBar,
-        ),
+        accentColor: DarkColorsConst.accent,
+        accentColorBrightness: Brightness.light,
+        primaryColor: DarkColorsConst.primary,
         scaffoldBackgroundColor: DarkColorsConst.backgroundScaffold,
+        backgroundColor: DarkColorsConst.backgroundColor,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: DarkColorsConst.backgroundBottomBar,
           selectedItemColor: DarkColorsConst.selected,
           unselectedItemColor: DarkColorsConst.notSelected,
+          selectedIconTheme: IconThemeData(
+            color: DarkColorsConst.selected,
+            size: 32,
+          ),
+          elevation: 4,
         ),
         textTheme: TextTheme(
-          headline2: TextStyle(
+          headline1: TextStyle(
             color: DarkColorsConst.text,
+            fontFamily: FontsConst.title,
+            fontSize: 23,
+          ),
+          headline3: TextStyle(
+            color: DarkColorsConst.text,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
           ),
         ),
-        primaryColor: DarkColorsConst.primary,
       );
     }
     saveThemePreferences();
@@ -77,40 +101,64 @@ abstract class _AppControllerBase with Store {
     if (prefs.containsKey('isDark') && prefs.getBool('isDark')) {
       themeType = ThemeData(
         brightness: Brightness.dark,
-        appBarTheme: AppBarTheme(
-          color: DarkColorsConst.backgroundBottomBar,
-        ),
+        accentColor: DarkColorsConst.accent,
+        accentColorBrightness: Brightness.light,
+        primaryColor: DarkColorsConst.primary,
         scaffoldBackgroundColor: DarkColorsConst.backgroundScaffold,
+        backgroundColor: DarkColorsConst.backgroundColor,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: DarkColorsConst.backgroundBottomBar,
           selectedItemColor: DarkColorsConst.selected,
           unselectedItemColor: DarkColorsConst.notSelected,
+          selectedIconTheme: IconThemeData(
+            color: DarkColorsConst.selected,
+            size: 32,
+          ),
+          elevation: 4,
         ),
         textTheme: TextTheme(
-          headline2: TextStyle(
+          headline1: TextStyle(
             color: DarkColorsConst.text,
+            fontFamily: FontsConst.title,
+            fontSize: 23,
+          ),
+          headline3: TextStyle(
+            color: DarkColorsConst.text,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
           ),
         ),
-        primaryColor: DarkColorsConst.primary,
       );
     } else {
       themeType = ThemeData(
         brightness: Brightness.light,
-        appBarTheme: AppBarTheme(
-          color: LightColorsConst.backgroundBottomBar,
-        ),
+        accentColor: LightColorsConst.accent,
+        accentColorBrightness: Brightness.light,
+        primaryColor: LightColorsConst.primary,
         scaffoldBackgroundColor: LightColorsConst.backgroundScaffold,
+        backgroundColor: LightColorsConst.backgroundColor,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: LightColorsConst.backgroundBottomBar,
           selectedItemColor: LightColorsConst.selected,
           unselectedItemColor: LightColorsConst.notSelected,
+          selectedIconTheme: IconThemeData(
+            color: LightColorsConst.selected,
+            size: 32,
+          ),
+          elevation: 4,
         ),
         textTheme: TextTheme(
-          headline2: TextStyle(
+          headline1: TextStyle(
             color: LightColorsConst.text,
+            fontFamily: FontsConst.text,
+            fontSize: 30,
+          ),
+          headline3: TextStyle(
+            color: LightColorsConst.text,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
           ),
         ),
-        primaryColor: LightColorsConst.primary,
       );
     }
   }

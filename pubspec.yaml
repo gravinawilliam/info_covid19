@@ -65,6 +65,14 @@ dev_dependencies:
       
 flutter:
   uses-material-design: true
+  fonts:
+      - family: Montserrat
+        fonts:
+            - asset: lib/app/core/assets/fonts/Montserrat.ttf
+
+      - family: Cairo
+        fonts:
+            - asset: lib/app/core/assets/fonts/Cairo.ttf
   assets: 
     - lib/app/core/assets/images/
 

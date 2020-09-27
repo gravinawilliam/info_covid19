@@ -23,25 +23,25 @@ class CardsDataCovid19 extends StatelessWidget {
         alignment: WrapAlignment.spaceBetween,
         children: [
           CardDataCovid19(
-            color: Colors.green[900],
+            color: DataColorsConst.casosConfirmados,
             width: 0.475,
             title: "Casos Confirmados",
             quantidade: casosConfirmados.toString(),
           ),
           CardDataCovid19(
-            color: Colors.deepPurple,
+            color: DataColorsConst.recuperados,
             width: 0.475,
             title: "Recuperados",
             quantidade: recuperados.toString(),
           ),
           CardDataCovid19(
-            color: Colors.pinkAccent,
+            color: DataColorsConst.ativos,
             width: 0.475,
             title: "Ativos",
             quantidade: ativos.toString(),
           ),
           CardDataCovid19(
-            color: Colors.redAccent,
+            color: DataColorsConst.obitos,
             width: 0.475,
             title: "Obitos",
             quantidade: obitos.toString(),

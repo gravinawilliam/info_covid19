@@ -16,6 +16,8 @@ class _BasePageState extends ModularState<BasePage, BaseController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: Text(
           LocaleProvider.of(context).title.toUpperCase(),
         ),
