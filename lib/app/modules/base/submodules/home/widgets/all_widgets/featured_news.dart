@@ -14,7 +14,7 @@ class FeaturedNews extends StatelessWidget {
   const FeaturedNews({this.controller});
   @override
   Widget build(BuildContext context) {
-    var _sizeHeightFeaturedNews = SizeConst.screenHeight * 0.2;
+    var _sizeHeightFeaturedNews = SizeConst.screenHeight * 0.22;
     return Observer(
       builder: (_) {
         if (controller.newsList.hasError) {

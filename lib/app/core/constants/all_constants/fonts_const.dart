@@ -1,5 +1,4 @@
 class FontsConst {
-  static const String title = 'LexendPeta';
-  static const String titleLogin = 'ArchivoBlack';
+  static const String title = 'Cairo';
   static const String text = 'Montserrat';
 }

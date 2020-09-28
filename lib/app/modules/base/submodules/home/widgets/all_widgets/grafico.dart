@@ -37,7 +37,7 @@ class Grafico extends StatelessWidget {
             switch (i) {
               case 0:
                 return PieChartSectionData(
-                  color: ColorsConst.ativos,
+                  color: DataColorsConst.ativos,
                   value: controller.calculaPorcentagem(
                     casosConfirmados,
                     ativos,
@@ -54,7 +54,7 @@ class Grafico extends StatelessWidget {
                 );
               case 1:
                 return PieChartSectionData(
-                  color: ColorsConst.recuperados,
+                  color: DataColorsConst.recuperados,
                   value: controller.calculaPorcentagem(
                     casosConfirmados,
                     recuperados,
@@ -71,7 +71,7 @@ class Grafico extends StatelessWidget {
                 );
               case 2:
                 return PieChartSectionData(
-                  color: ColorsConst.mortes,
+                  color: DataColorsConst.obitos,
                   value: controller.calculaPorcentagem(
                     casosConfirmados,
                     mortes,

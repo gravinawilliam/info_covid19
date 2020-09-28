@@ -56,10 +56,15 @@ class CountryModel {
 
 class CountryInfo {
   String flag;
+  String iso2;
 
-  CountryInfo({this.flag});
+  CountryInfo({
+    this.flag,
+    this.iso2,
+  });
 
   factory CountryInfo.fromJson(Map doc) => CountryInfo(
         flag: doc['flag'],
+        iso2: doc['iso2'],
       );
 }

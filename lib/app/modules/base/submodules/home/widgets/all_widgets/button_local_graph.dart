@@ -8,9 +8,11 @@ class ButtonLocalGraph extends StatelessWidget {
   final Function onTap;
   final Color color;
   final double opacity;
+  final int index;
 
   const ButtonLocalGraph({
     this.name,
+    this.index,
     this.opacity,
     this.color,
     this.bandeiraUrl,
@@ -23,27 +25,29 @@ class ButtonLocalGraph extends StatelessWidget {
       child: Opacity(
         opacity: opacity,
         child: Container(
+          height: (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) *
+              0.21,
+          margin: EdgeInsets.only(bottom: SizeConst.paddingVertical * 0.6),
           decoration: BoxDecoration(
-            color: color,
+            color: Theme.of(context).primaryColor,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
-              bottomLeft: Radius.circular(5),
-              bottomRight: Radius.circular(5),
+              topLeft: index == 0 ? Radius.circular(15) : Radius.circular(0),
+              bottomLeft: index == 3 ? Radius.circular(15) : Radius.circular(0),
             ),
           ),
-          width: (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) *
-              0.25,
+          width:
+              (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * 0.2,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 width: (SizeConst.screenWidth -
                         (2 * SizeConst.paddingHorizontal)) *
-                    0.25,
+                    0.2,
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
+                    topLeft:
+                        index == 0 ? Radius.circular(15) : Radius.circular(0),
                   ),
                   child: CachedNetworkImage(
                     imageUrl: bandeiraUrl,
@@ -52,15 +56,10 @@ class ButtonLocalGraph extends StatelessWidget {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(5),
-                    bottomRight: Radius.circular(5),
-                  ),
-                ),
+                alignment: Alignment.center,
                 width: (SizeConst.screenWidth -
                         (2 * SizeConst.paddingHorizontal)) *
-                    0.25,
+                    0.2,
                 child: Text(
                   name,
                   textAlign: TextAlign.center,

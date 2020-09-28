@@ -20,12 +20,12 @@ class GraphDataCovid19 extends StatelessWidget {
         SizeConst.paddingHorizontal,
         0,
       ),
-      width: SizeConst.screenWidth,
-      child: Column(
+      width: SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal),
+      child: Row(
         children: [
           LocaleGraph(
             bandeiraUrl: controller.countryModel.countryInfo.flag,
-            name: controller.countryModel.country,
+            name: controller.countryModel.countryInfo.iso2,
           ),
           CardsDataCovid19(
             ativos: controller.countryModel.active,
@@ -33,14 +33,6 @@ class GraphDataCovid19 extends StatelessWidget {
             obitos: controller.countryModel.deaths,
             recuperados: controller.countryModel.recovered,
           ),
-          Grafico(
-            populacao: controller.countryModel.population,
-            ativos: controller.countryModel.active,
-            casosConfirmados: controller.countryModel.cases,
-            recuperados: controller.countryModel.recovered,
-            mortes: controller.countryModel.deaths,
-            controller: controller,
-          )
         ],
       ),
     );

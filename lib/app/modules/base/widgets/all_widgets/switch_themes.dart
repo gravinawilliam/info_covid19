@@ -20,18 +20,20 @@ class SwitchThemes extends StatelessWidget {
                     ? Theme.of(context)
                         .bottomNavigationBarTheme
                         .unselectedItemColor
-                    : ColorsConst.sun,
+                    : IconsColorsConst.sun,
               ),
               Switch(
                 onChanged: (value) {
                   controller.appController.changeTheme();
                 },
                 value: controller.appController.isDark,
+                activeColor: IconsColorsConst.moon,
+                inactiveThumbColor: IconsColorsConst.sun,
               ),
               Icon(
                 Ionicons.ios_moon,
                 color: controller.appController.isDark
-                    ? ColorsConst.moon
+                    ? IconsColorsConst.moon
                     : Theme.of(context)
                         .bottomNavigationBarTheme
                         .unselectedItemColor,

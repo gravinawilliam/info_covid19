@@ -17,12 +17,6 @@ class BottomBar extends StatelessWidget {
           verticalPadding: 20.0,
           duration: Duration(seconds: 1),
           currentIndex: controller.selectedIndex,
-          selectedItemTheme: IconThemeData(
-            color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-          ),
-          textStyle: TextStyle(
-            color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-          ),
           unselectedItemTheme: IconThemeData(
             color: Theme.of(context).backgroundColor,
           ),
@@ -31,27 +25,18 @@ class BottomBar extends StatelessWidget {
               Theme.of(context).bottomNavigationBarTheme.backgroundColor,
           items: <FlipBoxNavigationBarItem>[
             FlipBoxNavigationBarItem(
-              name: "Home",
+              name: "",
               selectedIcon: Ionicons.md_home,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
             FlipBoxNavigationBarItem(
-              name: "Dados\nCovid-19",
+              name: "",
               selectedIcon: FontAwesomeIcons.solidListAlt,
               unselectedIcon: FontAwesomeIcons.listAlt,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
             FlipBoxNavigationBarItem(
-              name: "Notícias",
+              name: "",
               selectedIcon: FontAwesomeIcons.solidNewspaper, //
               unselectedIcon: FontAwesomeIcons.newspaper,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
           ],
         ),
