@@ -23,6 +23,17 @@ abstract class _HomeControllerBase with Store {
   @observable
   CountryModel countryModel;
 
+  @observable
+  bool isOpacity = true;
+
+  @observable
+  double opacidadeCardsDatacovid = 1.0;
+
+  @action
+  trocaOpacidadeDataCovid19() {
+    isOpacity = !isOpacity;
+  }
+
   @action
   void getListFeaturedNews() {
     newsList = repository.getFeaturedNews().asObservable();
