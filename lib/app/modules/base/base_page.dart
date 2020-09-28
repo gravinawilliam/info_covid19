@@ -17,6 +17,7 @@ class _BasePageState extends ModularState<BasePage, BaseController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        
         elevation: 0,
         title: Text(
           LocaleProvider.of(context).title.toUpperCase(),

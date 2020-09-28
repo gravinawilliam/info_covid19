@@ -17,12 +17,6 @@ class BottomBar extends StatelessWidget {
           verticalPadding: 20.0,
           duration: Duration(seconds: 1),
           currentIndex: controller.selectedIndex,
-          selectedItemTheme:
-              Theme.of(context).bottomNavigationBarTheme.selectedIconTheme,
-          textStyle: TextStyle(
-            color: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
-            fontSize: 1,
-          ),
           unselectedItemTheme: IconThemeData(
             color: Theme.of(context).backgroundColor,
           ),
@@ -33,26 +27,16 @@ class BottomBar extends StatelessWidget {
             FlipBoxNavigationBarItem(
               name: "",
               selectedIcon: Ionicons.md_home,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
             FlipBoxNavigationBarItem(
               name: "",
               selectedIcon: FontAwesomeIcons.solidListAlt,
               unselectedIcon: FontAwesomeIcons.listAlt,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
             FlipBoxNavigationBarItem(
               name: "",
-
               selectedIcon: FontAwesomeIcons.solidNewspaper, //
               unselectedIcon: FontAwesomeIcons.newspaper,
-              selectedBackgroundColor: Theme.of(context).backgroundColor,
-              unselectedBackgroundColor:
-                  Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             ),
           ],
         ),

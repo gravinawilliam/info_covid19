@@ -26,30 +26,53 @@ abstract class _AppControllerBase with Store {
   void changeTheme() {
     if (isDark) {
       themeType = ThemeData(
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.light,
+        ),
         brightness: Brightness.light,
-        accentColor: LightColorsConst.accent,
-        accentColorBrightness: Brightness.light,
         primaryColor: LightColorsConst.primary,
         scaffoldBackgroundColor: LightColorsConst.backgroundScaffold,
-        backgroundColor: LightColorsConst.backgroundColor,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: LightColorsConst.backgroundBottomBar,
-          selectedItemColor: LightColorsConst.selected,
-          unselectedItemColor: LightColorsConst.notSelected,
-          selectedIconTheme: IconThemeData(
-            color: LightColorsConst.selected,
-            size: 32,
-          ),
-          elevation: 4,
-        ),
+        accentColor: LightColorsConst.accent,
         textTheme: TextTheme(
+          //! title
           headline1: TextStyle(
-            color: LightColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.title,
             fontSize: 23,
           ),
+          //! subtitle
+          subtitle1: TextStyle(
+            color: LightColorsConst.textSubtitle,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text selecionado
+          bodyText1: TextStyle(
+            color: LightColorsConst.textSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text nao selecionado
+          bodyText2: TextStyle(
+            color: LightColorsConst.textNoSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! botao
+          button: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text
+          headline2: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! numeros
           headline3: TextStyle(
-            color: LightColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.text,
             fontSize: 17,
           ),
@@ -57,30 +80,53 @@ abstract class _AppControllerBase with Store {
       );
     } else {
       themeType = ThemeData(
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.dark,
+        ),
         brightness: Brightness.dark,
-        accentColor: DarkColorsConst.accent,
-        accentColorBrightness: Brightness.light,
         primaryColor: DarkColorsConst.primary,
         scaffoldBackgroundColor: DarkColorsConst.backgroundScaffold,
-        backgroundColor: DarkColorsConst.backgroundColor,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: DarkColorsConst.backgroundBottomBar,
-          selectedItemColor: DarkColorsConst.selected,
-          unselectedItemColor: DarkColorsConst.notSelected,
-          selectedIconTheme: IconThemeData(
-            color: DarkColorsConst.selected,
-            size: 32,
-          ),
-          elevation: 4,
-        ),
+        accentColor: DarkColorsConst.accent,
         textTheme: TextTheme(
+          //! title
           headline1: TextStyle(
-            color: DarkColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.title,
             fontSize: 23,
           ),
+          //! subtitle
+          subtitle1: TextStyle(
+            color: DarkColorsConst.textSubtitle,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text selecionado
+          bodyText1: TextStyle(
+            color: DarkColorsConst.textSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text nao selecionado
+          bodyText2: TextStyle(
+            color: DarkColorsConst.textNoSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! botao
+          button: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text
+          headline2: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! numeros
           headline3: TextStyle(
-            color: DarkColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.text,
             fontSize: 17,
           ),
@@ -100,30 +146,53 @@ abstract class _AppControllerBase with Store {
     final prefs = await SharedPreferences.getInstance();
     if (prefs.containsKey('isDark') && prefs.getBool('isDark')) {
       themeType = ThemeData(
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.dark,
+        ),
         brightness: Brightness.dark,
-        accentColor: DarkColorsConst.accent,
-        accentColorBrightness: Brightness.light,
         primaryColor: DarkColorsConst.primary,
         scaffoldBackgroundColor: DarkColorsConst.backgroundScaffold,
-        backgroundColor: DarkColorsConst.backgroundColor,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: DarkColorsConst.backgroundBottomBar,
-          selectedItemColor: DarkColorsConst.selected,
-          unselectedItemColor: DarkColorsConst.notSelected,
-          selectedIconTheme: IconThemeData(
-            color: DarkColorsConst.selected,
-            size: 32,
-          ),
-          elevation: 4,
-        ),
+        accentColor: DarkColorsConst.accent,
         textTheme: TextTheme(
+          //! title
           headline1: TextStyle(
-            color: DarkColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.title,
             fontSize: 23,
           ),
+          //! subtitle
+          subtitle1: TextStyle(
+            color: DarkColorsConst.textSubtitle,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text selecionado
+          bodyText1: TextStyle(
+            color: DarkColorsConst.textSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text nao selecionado
+          bodyText2: TextStyle(
+            color: DarkColorsConst.textNoSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! botao
+          button: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text
+          headline2: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! numeros
           headline3: TextStyle(
-            color: DarkColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.text,
             fontSize: 17,
           ),
@@ -131,30 +200,53 @@ abstract class _AppControllerBase with Store {
       );
     } else {
       themeType = ThemeData(
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.light,
+        ),
         brightness: Brightness.light,
-        accentColor: LightColorsConst.accent,
-        accentColorBrightness: Brightness.light,
         primaryColor: LightColorsConst.primary,
         scaffoldBackgroundColor: LightColorsConst.backgroundScaffold,
-        backgroundColor: LightColorsConst.backgroundColor,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: LightColorsConst.backgroundBottomBar,
-          selectedItemColor: LightColorsConst.selected,
-          unselectedItemColor: LightColorsConst.notSelected,
-          selectedIconTheme: IconThemeData(
-            color: LightColorsConst.selected,
-            size: 32,
-          ),
-          elevation: 4,
-        ),
+        accentColor: LightColorsConst.accent,
         textTheme: TextTheme(
+          //! title
           headline1: TextStyle(
-            color: LightColorsConst.text,
-            fontFamily: FontsConst.text,
-            fontSize: 30,
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.title,
+            fontSize: 23,
           ),
+          //! subtitle
+          subtitle1: TextStyle(
+            color: LightColorsConst.textSubtitle,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text selecionado
+          bodyText1: TextStyle(
+            color: LightColorsConst.textSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text nao selecionado
+          bodyText2: TextStyle(
+            color: LightColorsConst.textNoSelected,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! botao
+          button: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! text
+          headline2: TextStyle(
+            color: TextColorsConst.title,
+            fontFamily: FontsConst.text,
+            fontSize: 17,
+          ),
+          //! numeros
           headline3: TextStyle(
-            color: LightColorsConst.text,
+            color: TextColorsConst.title,
             fontFamily: FontsConst.text,
             fontSize: 17,
           ),

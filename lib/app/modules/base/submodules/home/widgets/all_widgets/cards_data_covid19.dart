@@ -18,32 +18,31 @@ class CardsDataCovid19 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal),
-      child: Wrap(
-        alignment: WrapAlignment.spaceBetween,
+      width: (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * 0.8,
+      child: Column(
         children: [
           CardDataCovid19(
             color: DataColorsConst.casosConfirmados,
-            width: 0.475,
-            title: "Casos Confirmados",
+            title: "Casos",
             quantidade: casosConfirmados.toString(),
+            index: 0,
           ),
           CardDataCovid19(
             color: DataColorsConst.recuperados,
-            width: 0.475,
             title: "Recuperados",
             quantidade: recuperados.toString(),
+            index: 1,
           ),
           CardDataCovid19(
             color: DataColorsConst.ativos,
-            width: 0.475,
             title: "Ativos",
             quantidade: ativos.toString(),
+            index: 2,
           ),
           CardDataCovid19(
             color: DataColorsConst.obitos,
-            width: 0.475,
             title: "Obitos",
+            index: 3,
             quantidade: obitos.toString(),
           ),
         ],

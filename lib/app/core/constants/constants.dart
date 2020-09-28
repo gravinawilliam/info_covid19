@@ -5,4 +5,3 @@ export 'all_constants/fonts_const.dart';
 export 'all_constants/images_const.dart';
 export 'all_constants/routers_const.dart';
 export 'all_constants/size_const.dart';
-export 'all_constants/style_const.dart';
