@@ -38,13 +38,13 @@ abstract class _AppControllerBase with Store {
           headline1: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.title,
-            fontSize: 23,
+            fontSize: 26,
           ),
           //! subtitle
           subtitle1: TextStyle(
             color: LightColorsConst.textSubtitle,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontSize: 23,
           ),
           //! text selecionado
           bodyText1: TextStyle(
@@ -62,7 +62,8 @@ abstract class _AppControllerBase with Store {
           button: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
           //! text
           headline2: TextStyle(
@@ -92,13 +93,13 @@ abstract class _AppControllerBase with Store {
           headline1: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.title,
-            fontSize: 23,
+            fontSize: 26,
           ),
           //! subtitle
           subtitle1: TextStyle(
             color: DarkColorsConst.textSubtitle,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontSize: 23,
           ),
           //! text selecionado
           bodyText1: TextStyle(
@@ -116,7 +117,8 @@ abstract class _AppControllerBase with Store {
           button: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
           //! text
           headline2: TextStyle(
@@ -158,13 +160,13 @@ abstract class _AppControllerBase with Store {
           headline1: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.title,
-            fontSize: 23,
+            fontSize: 26,
           ),
           //! subtitle
           subtitle1: TextStyle(
             color: DarkColorsConst.textSubtitle,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontSize: 23,
           ),
           //! text selecionado
           bodyText1: TextStyle(
@@ -182,7 +184,8 @@ abstract class _AppControllerBase with Store {
           button: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
           //! text
           headline2: TextStyle(
@@ -212,13 +215,13 @@ abstract class _AppControllerBase with Store {
           headline1: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.title,
-            fontSize: 23,
+            fontSize: 26,
           ),
           //! subtitle
           subtitle1: TextStyle(
             color: LightColorsConst.textSubtitle,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontSize: 23,
           ),
           //! text selecionado
           bodyText1: TextStyle(
@@ -236,7 +239,8 @@ abstract class _AppControllerBase with Store {
           button: TextStyle(
             color: TextColorsConst.title,
             fontFamily: FontsConst.text,
-            fontSize: 17,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
           ),
           //! text
           headline2: TextStyle(
