@@ -14,11 +14,14 @@ class TextColorsConst {
   static const Color texts = Color(0xFFF4FFF4);
 }
 
+class ButtonColorsConst {
+  static const Color good = Color(0xFF60d394);
+  static const Color bad = Color(0xFFee6055);
+}
+
 class IconsColorsConst {
   static const Color moon = Color(0xFFfffcf2);
   static const Color sun = Color(0xFFfdca40);
-  static const Color good = Color(0xFF60d394);
-  static const Color bad = Color(0xFFee6055);
   static const Color icons = Color(0xFFF4FFF4);
 }
 

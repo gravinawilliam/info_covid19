@@ -3,51 +3,48 @@ import 'package:info_covid19/app/core/constants/constants.dart';
 
 class CardDataCovid19 extends StatelessWidget {
   final Color color;
-  final int index;
-  final String quantidade;
   final String title;
+  final int number;
 
   const CardDataCovid19({
     this.color,
-    this.index,
     this.title,
-    this.quantidade,
+    this.number,
   });
 
   @override
   Widget build(BuildContext context) {
+    var padding = 12.0;
+    var alturaWidget = 100.0;
     return Container(
-      height:
-          (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * 0.21,
       decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.only(
-            topRight: index == 0 ? Radius.circular(15) : Radius.circular(0),
-            bottomRight: index == 3 ? Radius.circular(15) : Radius.circular(0),
-          )),
-      padding: EdgeInsets.all(7),
-      margin: EdgeInsets.only(
-        bottom: SizeConst.paddingVertical * 0.6,
-        left: SizeConst.paddingVertical * 0.6,
+        color: color,
+        borderRadius: BorderRadius.circular(7),
       ),
-      width: (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * 0.8,
+      height: alturaWidget,
+      padding: EdgeInsets.all(padding),
+      width: (SizeConst.screenWidth - (3 * SizeConst.paddingHorizontal)) * 0.5,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 22,
-              color: Colors.white,
+          Container(
+            alignment: Alignment.topRight,
+            height: (alturaWidget - (2 * padding)) * 0.5,
+            child: Text(
+              number.toString(),
+              style: Theme.of(context).textTheme.headline3.copyWith(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ),
-          Text(
-            quantidade,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.white,
+          Container(
+            alignment: Alignment.bottomLeft,
+            height: (alturaWidget - (2 * padding)) * 0.5,
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.headline2.copyWith(
+                    fontSize: 20,
+                  ),
             ),
           ),
         ],

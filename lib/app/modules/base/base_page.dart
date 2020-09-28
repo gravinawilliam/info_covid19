@@ -15,19 +15,6 @@ class _BasePageState extends ModularState<BasePage, BaseController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        
-        elevation: 0,
-        title: Text(
-          LocaleProvider.of(context).title.toUpperCase(),
-        ),
-        actions: [
-          SwitchThemes(
-            controller: controller,
-          ),
-        ],
-      ),
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
         controller: controller.pageController,

@@ -49,6 +49,38 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
+  final _$isOpacityAtom = Atom(name: '_HomeControllerBase.isOpacity');
+
+  @override
+  bool get isOpacity {
+    _$isOpacityAtom.reportRead();
+    return super.isOpacity;
+  }
+
+  @override
+  set isOpacity(bool value) {
+    _$isOpacityAtom.reportWrite(value, super.isOpacity, () {
+      super.isOpacity = value;
+    });
+  }
+
+  final _$opacidadeCardsDatacovidAtom =
+      Atom(name: '_HomeControllerBase.opacidadeCardsDatacovid');
+
+  @override
+  double get opacidadeCardsDatacovid {
+    _$opacidadeCardsDatacovidAtom.reportRead();
+    return super.opacidadeCardsDatacovid;
+  }
+
+  @override
+  set opacidadeCardsDatacovid(double value) {
+    _$opacidadeCardsDatacovidAtom
+        .reportWrite(value, super.opacidadeCardsDatacovid, () {
+      super.opacidadeCardsDatacovid = value;
+    });
+  }
+
   final _$getDataCountryAsyncAction =
       AsyncAction('_HomeControllerBase.getDataCountry');
 
@@ -59,6 +91,17 @@ mixin _$HomeController on _HomeControllerBase, Store {
 
   final _$_HomeControllerBaseActionController =
       ActionController(name: '_HomeControllerBase');
+
+  @override
+  dynamic trocaOpacidadeDataCovid19() {
+    final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
+        name: '_HomeControllerBase.trocaOpacidadeDataCovid19');
+    try {
+      return super.trocaOpacidadeDataCovid19();
+    } finally {
+      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   void getListFeaturedNews() {
@@ -86,7 +129,9 @@ mixin _$HomeController on _HomeControllerBase, Store {
   String toString() {
     return '''
 newsList: ${newsList},
-countryModel: ${countryModel}
+countryModel: ${countryModel},
+isOpacity: ${isOpacity},
+opacidadeCardsDatacovid: ${opacidadeCardsDatacovid}
     ''';
   }
 }
