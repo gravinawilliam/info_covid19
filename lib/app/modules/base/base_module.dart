@@ -5,6 +5,8 @@ import '../../core/constants/constants.dart';
 import 'base_controller.dart';
 import 'base_page.dart';
 import 'repositories/base_repository.dart';
+import 'submodules/country_detail/country_detail_module.dart';
+import 'submodules/country_detail/country_detail_page.dart';
 import 'submodules/home/home_module.dart';
 
 class BaseModule extends ChildModule {
@@ -29,6 +31,11 @@ class BaseModule extends ChildModule {
         ModularRouter(
           RoutersConst.testCovid19,
           module: TestCovid19Module(),
+          transition: TransitionType.fadeIn,
+        ),
+        ModularRouter(
+          RoutersConst.countryDetail,
+          module: CountryDetailModule(),
           transition: TransitionType.fadeIn,
         ),
       ];

@@ -5,9 +5,11 @@ class CardDataCovid19 extends StatelessWidget {
   final Color color;
   final String title;
   final int number;
+  final double width;
 
   const CardDataCovid19({
     this.color,
+    this.width,
     this.title,
     this.number,
   });
@@ -21,9 +23,12 @@ class CardDataCovid19 extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(7),
       ),
+      margin: EdgeInsets.only(top: SizeConst.paddingVertical),
       height: alturaWidget,
       padding: EdgeInsets.all(padding),
-      width: (SizeConst.screenWidth - (3 * SizeConst.paddingHorizontal)) * 0.5,
+      width: width == 0.5
+          ? (SizeConst.screenWidth - (3 * SizeConst.paddingHorizontal)) * width
+          : (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * width,
       child: Column(
         children: [
           Container(

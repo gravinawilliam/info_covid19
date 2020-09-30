@@ -25,7 +25,7 @@ class DadosLocaisCovid19 extends StatelessWidget {
             ),
             Stack(
               children: [
-                CardsDataCovid(
+                CardsDataCovid19(
                   obitos: controller.countryModel.deaths,
                   recuperados: controller.countryModel.recovered,
                   ativos: controller.countryModel.active,
