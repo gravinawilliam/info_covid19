@@ -29,6 +29,7 @@ class CardsDataCovid19 extends StatelessWidget {
         margin: EdgeInsets.symmetric(
           horizontal: SizeConst.paddingHorizontal,
         ),
+        alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

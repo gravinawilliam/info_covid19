@@ -7,4 +7,10 @@ part 'country_detail_controller.g.dart';
 class CountryDetailController = _CountryDetailControllerBase
     with _$CountryDetailController;
 
-abstract class _CountryDetailControllerBase with Store {}
+abstract class _CountryDetailControllerBase with Store {
+  @action
+  double calculaPorcentagem(int casosConfirmados, int dados) {
+    var resultado = ((dados * 100) / casosConfirmados);
+    return resultado;
+  }
+}

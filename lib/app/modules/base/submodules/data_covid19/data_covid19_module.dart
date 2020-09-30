@@ -21,7 +21,7 @@ class DataCovid19Module extends WidgetModule {
           RoutersConst.dataCovid19,
           child: (_, args) => DataCovid19Page(),
           transition: TransitionType.upToDown,
-          duration: Duration(seconds: 2),
+          duration: Duration(seconds: 1),
         ),
       ];
 
