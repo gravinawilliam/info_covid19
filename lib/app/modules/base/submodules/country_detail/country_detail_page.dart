@@ -5,8 +5,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:info_covid19/app/core/constants/constants.dart';
 import 'package:info_covid19/app/core/models/all_models/country_model.dart';
 import 'package:info_covid19/app/modules/base/submodules/country_detail/widgets/header_country.dart';
+import 'package:info_covid19/app/modules/base/submodules/home/widgets/widgets.dart';
 import 'country_detail_controller.dart';
 import 'widgets/cards_data_covid.dart';
+import 'widgets/grafico_country_detail.dart';
 
 class CountryDetailPage extends StatefulWidget {
   @override
@@ -21,7 +23,7 @@ class _CountryDetailPageState
     SizeConst().init(context);
     return Scaffold(
       body: Container(
-        height: SizeConst.screenHeight,
+        height: SizeConst.screenHeight + SizeConst.statusBar,
         width: SizeConst.screenWidth,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -41,6 +43,14 @@ class _CountryDetailPageState
                 obitos: countryModel.deaths,
                 recuperados: countryModel.recovered,
                 population: countryModel.population,
+              ),
+              GraficoCountryDetail(
+                populacao: countryModel.population,
+                ativos: countryModel.active,
+                casosConfirmados: countryModel.cases,
+                recuperados: countryModel.recovered,
+                mortes: countryModel.deaths,
+                controller: controller,
               ),
             ],
           ),
