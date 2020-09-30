@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import '../../../../../../core/constants/constants.dart';
 import '../../home_controller.dart';
+import 'elemento_legenda.dart';
 
 class Grafico extends StatelessWidget {
   final int populacao;
@@ -33,77 +34,120 @@ class Grafico extends StatelessWidget {
         seconds: 1,
       ),
       child: Container(
-        alignment: Alignment.center,
-        height: SizeConst.screenHeight * 0.27,
-        child: PieChart(
-          PieChartData(
-            borderData: FlBorderData(
-              show: false,
+        margin: EdgeInsets.only(
+          left: SizeConst.paddingHorizontal,
+          right: SizeConst.paddingHorizontal,
+        ),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                bottom: SizeConst.paddingVertical * 0.5,
+              ),
+              child: Text(
+                "% baseada em cima da quantidade de casos.",
+                style: Theme.of(context).textTheme.bodyText1,
+                textAlign: TextAlign.left,
+              ),
             ),
-            sectionsSpace: 0,
-            centerSpaceRadius: radius * .9,
-            sections: List.generate(
-              3,
-              (i) {
-                switch (i) {
-                  case 0:
-                    return PieChartSectionData(
-                      color: DataColorsConst.ativos,
-                      value: controller.calculaPorcentagem(
-                        casosConfirmados,
-                        ativos,
-                      ),
-                      title: "${controller.calculaPorcentagem(
-                            casosConfirmados,
-                            ativos,
-                          ).toStringAsFixed(2)}%",
-                      radius: radius,
-                      titleStyle: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xffffffff)),
-                    );
-                  case 1:
-                    return PieChartSectionData(
-                      color: DataColorsConst.recuperados,
-                      value: controller.calculaPorcentagem(
-                        casosConfirmados,
-                        recuperados,
-                      ),
-                      title: "${controller.calculaPorcentagem(
-                            casosConfirmados,
-                            recuperados,
-                          ).toStringAsFixed(2)}%",
-                      radius: radius,
-                      titleStyle: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xffffffff)),
-                    );
-                  case 2:
-                    return PieChartSectionData(
-                      color: DataColorsConst.obitos,
-                      value: controller.calculaPorcentagem(
-                        casosConfirmados,
-                        mortes,
-                      ),
-                      title: "${controller.calculaPorcentagem(
-                            casosConfirmados,
-                            mortes,
-                          ).toStringAsFixed(2)}%",
-                      radius: radius,
-                      titleStyle: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xffffffff),
-                      ),
-                    );
-                  default:
-                    return null;
-                }
-              },
+            Container(
+              alignment: Alignment.center,
+              height: SizeConst.screenHeight * 0.27,
+              child: PieChart(
+                PieChartData(
+                  borderData: FlBorderData(
+                    show: false,
+                  ),
+                  sectionsSpace: 0,
+                  centerSpaceRadius: radius * .9,
+                  sections: List.generate(
+                    3,
+                    (i) {
+                      switch (i) {
+                        case 0:
+                          return PieChartSectionData(
+                            color: DataColorsConst.ativos,
+                            value: controller.calculaPorcentagem(
+                              casosConfirmados,
+                              ativos,
+                            ),
+                            title: "${controller.calculaPorcentagem(
+                                  casosConfirmados,
+                                  ativos,
+                                ).toStringAsFixed(2)}%",
+                            radius: radius,
+                            titleStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xffffffff)),
+                          );
+                        case 1:
+                          return PieChartSectionData(
+                            color: DataColorsConst.recuperados,
+                            value: controller.calculaPorcentagem(
+                              casosConfirmados,
+                              recuperados,
+                            ),
+                            title: "${controller.calculaPorcentagem(
+                                  casosConfirmados,
+                                  recuperados,
+                                ).toStringAsFixed(2)}%",
+                            radius: radius,
+                            titleStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xffffffff)),
+                          );
+                        case 2:
+                          return PieChartSectionData(
+                            color: DataColorsConst.obitos,
+                            value: controller.calculaPorcentagem(
+                              casosConfirmados,
+                              mortes,
+                            ),
+                            title: "${controller.calculaPorcentagem(
+                                  casosConfirmados,
+                                  mortes,
+                                ).toStringAsFixed(2)}%",
+                            radius: radius,
+                            titleStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffffffff),
+                            ),
+                          );
+                        default:
+                          return null;
+                      }
+                    },
+                  ),
+                ),
+              ),
             ),
-          ),
+            Container(
+              margin: EdgeInsets.only(
+                top: SizeConst.paddingVertical * 0.5,
+              ),
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                runAlignment: WrapAlignment.spaceBetween,
+                children: [
+                  ElementoLegenda(
+                    color: DataColorsConst.ativos,
+                    title: "Ativos",
+                  ),
+                  ElementoLegenda(
+                    color: DataColorsConst.recuperados,
+                    title: "Recuperados",
+                  ),
+                  ElementoLegenda(
+                    color: DataColorsConst.obitos,
+                    title: "Obitos",
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
