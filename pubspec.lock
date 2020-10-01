@@ -169,13 +169,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
-  cool_nav:
-    dependency: "direct main"
-    description:
-      name: cool_nav
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3"
   crypto:
     dependency: transitive
     description:

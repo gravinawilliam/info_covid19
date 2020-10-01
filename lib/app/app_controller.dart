@@ -27,7 +27,7 @@ abstract class _AppControllerBase with Store {
     if (isDark) {
       themeType = ThemeData(
         appBarTheme: AppBarTheme(
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
         ),
         brightness: Brightness.light,
         primaryColor: LightColorsConst.primary,
@@ -204,7 +204,7 @@ abstract class _AppControllerBase with Store {
     } else {
       themeType = ThemeData(
         appBarTheme: AppBarTheme(
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
         ),
         brightness: Brightness.light,
         primaryColor: LightColorsConst.primary,

@@ -1,4 +1,3 @@
-import 'package:cool_nav/cool_nav.dart';
 import 'package:fancy_bottom_bar/fancy_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -30,6 +29,7 @@ class BottomBar extends StatelessWidget {
               icon: Icon(
                 Ionicons.md_home,
                 size: 32,
+                color: Colors.white,
               ),
             ),
             FancyBottomItem(
@@ -41,6 +41,7 @@ class BottomBar extends StatelessWidget {
               icon: Icon(
                 FontAwesomeIcons.solidListAlt,
                 size: 32,
+                color: Colors.white,
               ),
             ),
             FancyBottomItem(
@@ -51,6 +52,7 @@ class BottomBar extends StatelessWidget {
               icon: Icon(
                 FontAwesomeIcons.solidNewspaper,
                 size: 32,
+                color: Colors.white,
               ),
             ),
           ],
