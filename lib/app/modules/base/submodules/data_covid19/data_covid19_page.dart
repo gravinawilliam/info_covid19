@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-import 'package:info_covid19/app/core/models/models.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/models/models.dart';
 import 'data_covid19_controller.dart';
 import 'data_covid19_status.dart';
 import 'widgets/buttons_locais.dart';
@@ -38,6 +37,7 @@ class _DataCovid19PageState
               children: [
                 ButtonsLocais(),
                 Observer(
+                  // ignore: missing_return
                   builder: (_) {
                     if (controller.status == DataCovid19Status.loading) {
                       return Container(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../core/constants/constants.dart';
 import 'base_controller.dart';
 import 'submodules/data_covid19/data_covid19_module.dart';
 import 'submodules/home/home_module.dart';

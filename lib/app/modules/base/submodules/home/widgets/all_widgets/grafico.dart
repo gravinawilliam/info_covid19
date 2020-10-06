@@ -1,6 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import '../../../../../../core/constants/constants.dart';
 import '../../home_controller.dart';
 import 'elemento_legenda.dart';

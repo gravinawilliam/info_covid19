@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:dio/native_imp.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:info_covid19/app/core/models/all_models/country_model.dart';
+import '../../../../../core/models/models.dart';
 
 import 'interfaces/data_covid19_repository_interface.dart';
 

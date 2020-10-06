@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
+import '../../../../../../core/constants/constants.dart';
 
 class HeaderCountry extends StatelessWidget {
   final String imageUrl;

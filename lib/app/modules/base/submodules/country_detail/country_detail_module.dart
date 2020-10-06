@@ -1,10 +1,8 @@
-import 'package:dio/dio.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-import 'repositories/country_detail_repository.dart';
-import 'country_detail_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
+import '../../../../core/constants/constants.dart';
+import 'country_detail_controller.dart';
 import 'country_detail_page.dart';
+import 'repositories/country_detail_repository.dart';
 
 class CountryDetailModule extends ChildModule {
   @override

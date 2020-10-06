@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-
+import '../../../../../core/constants/constants.dart';
 import 'button_local.dart';
 
 class ButtonsLocais extends StatelessWidget {

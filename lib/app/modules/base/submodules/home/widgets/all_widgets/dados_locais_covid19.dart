@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/core/constants/all_constants/size_const.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/home_controller.dart';
-
+import '../../home_controller.dart';
 import '../widgets.dart';
 import 'button_ver_grafico.dart';
 import 'buttons_locais.dart';

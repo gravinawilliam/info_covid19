@@ -20,6 +20,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Observer(
       builder: (_) {
         return Scaffold(
+          drawer: Drawer(),
           appBar: AppBar(
             backgroundColor: Theme.of(context).primaryColor,
             elevation: 0,
@@ -34,7 +35,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 color: IconsColorsConst.icons,
                 size: 32,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
             ),
           ),
           body: (controller.countryModel != null)

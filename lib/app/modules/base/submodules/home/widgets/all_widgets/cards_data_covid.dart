@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/widgets/all_widgets/card_data_covid19.dart';
+import '../../../../../../core/constants/constants.dart';
+import '../widgets.dart';
 
 class CardsDataCovid19 extends StatelessWidget {
   final int casosConfirmados;

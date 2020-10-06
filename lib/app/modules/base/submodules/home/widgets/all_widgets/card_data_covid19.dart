@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
+import '../../../../../../core/constants/constants.dart';
 
 class CardDataCovid19 extends StatelessWidget {
   final Color color;

@@ -1,9 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-import 'package:info_covid19/app/modules/base/submodules/country_detail/country_detail_controller.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/widgets/all_widgets/elemento_legenda.dart';
+import '../../../../../../core/constants/constants.dart';
+import '../../../country_detail/country_detail_controller.dart';
+import '../../../home/widgets/all_widgets/elemento_legenda.dart';
 
 class GraficoCountryDetail extends StatelessWidget {
   final int populacao;

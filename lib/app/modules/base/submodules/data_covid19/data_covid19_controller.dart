@@ -1,4 +1,3 @@
-import 'package:info_covid19/app/core/models/models.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

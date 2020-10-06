@@ -1,14 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-import 'package:info_covid19/app/core/models/all_models/country_model.dart';
-import 'package:info_covid19/app/modules/base/submodules/country_detail/widgets/header_country.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/widgets/widgets.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/models/models.dart';
 import 'country_detail_controller.dart';
-import 'widgets/cards_data_covid.dart';
-import 'widgets/grafico_country_detail.dart';
+import 'widgets/all_widgets/cards_data_covid.dart';
+import 'widgets/all_widgets/grafico_country_detail.dart';
+import 'widgets/widgets.dart';
 
 class CountryDetailPage extends StatefulWidget {
   @override

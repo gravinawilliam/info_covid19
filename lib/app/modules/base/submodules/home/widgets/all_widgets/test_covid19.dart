@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-
+import '../../../../../../core/constants/constants.dart';
 import '../widgets.dart';
 
 class TestCovid19 extends StatelessWidget {
@@ -24,6 +23,17 @@ class TestCovid19 extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context).accentColor,
             borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 25.0, // soften the shadow
+                spreadRadius: 2, //extend the shadow
+                offset: Offset(
+                  9, // Move to right 10  horizontally
+                  9, // Move to bottom 10 Vertically
+                ),
+              )
+            ],
           ),
           height: alturaWidget,
           margin: EdgeInsets.only(
