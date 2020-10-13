@@ -10,6 +10,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flutter_mobx: ^1.1.0+2
+  mobx: ^1.2.1+2
   fl_chart: ^0.11.1
   google_fonts: ^1.1.0
   loading_indicator: ^1.2.0
@@ -21,11 +23,11 @@ dependencies:
   fancy_bottom_bar: ^0.0.1
   # link para navegador
   url_launcher: ^5.7.0
-  #icons 
+  #icons
   font_awesome_flutter: ^8.8.1
   flutter_icons: ^1.1.0
-  # hasura 
-  hasura_connect: ^1.2.2+1  
+  # hasura
+  hasura_connect: ^1.2.2+1
   # cache
   shared_preferences: ^0.5.11
   # cache de image
@@ -34,24 +36,22 @@ dependencies:
   dio: ^3.0.10
   dio_http_cache: ^0.2.9
   # gerenciamento de estado
-  flutter_mobx: ^1.1.0+2
-  mobx: ^1.2.1+2
-  # injeção de dependencia 
+  # injeção de dependencia
   flutter_modular: ^2.0.1
   # idioma e localização
-  intl_utils: ^1.6.5
+  intl_utils: "1.6.5"
   flutter_localizations:
     sdk: flutter
 
 dev_dependencies:
-  effective_dart: ^1.2.4
-  mockito: ^4.1.1
   modular_codegen: ^2.0.0+1
   mobx_codegen: ^1.1.0+1
-  build_runner: ^1.10.1
+  build_runner: "1.10.2"
+  effective_dart: ^1.2.4
+  mockito: ^4.1.1
   flutter_test:
     sdk: flutter
-      
+
 flutter:
   uses-material-design: true
   fonts:
@@ -62,13 +62,13 @@ flutter:
       - family: Cairo
         fonts:
             - asset: lib/app/core/assets/fonts/Cairo.ttf
-  assets: 
+  assets:
     - lib/app/core/assets/images/
 
-## Slidy Scripts 
+## Slidy Scripts
 scripts:
   mobx: flutter pub get & flutter pub run build_runner watch --delete-conflicting-outputs
-    
+
 flutter_intl:
   enabled: true
   class_name: LocaleProvider

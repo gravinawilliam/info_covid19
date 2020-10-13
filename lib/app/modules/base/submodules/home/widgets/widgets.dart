@@ -8,4 +8,4 @@ export 'all_widgets/dados_locais_covid19.dart';
 export 'all_widgets/elemento_legenda.dart';
 export 'all_widgets/featured_news.dart';
 export 'all_widgets/grafico.dart';
-export 'all_widgets/test_covid19.dart';
+export 'all_widgets/switch_themes.dart';

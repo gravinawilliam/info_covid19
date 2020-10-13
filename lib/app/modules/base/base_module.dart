@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../core/constants/constants.dart';
-import '../test_covid19/test_covid19_module.dart';
 import 'base_controller.dart';
 import 'base_page.dart';
 import 'repositories/base_repository.dart';
@@ -25,11 +24,6 @@ class BaseModule extends ChildModule {
         ModularRouter(
           RoutersConst.home,
           module: HomeModule(),
-          transition: TransitionType.fadeIn,
-        ),
-        ModularRouter(
-          RoutersConst.testCovid19,
-          module: TestCovid19Module(),
           transition: TransitionType.fadeIn,
         ),
         ModularRouter(

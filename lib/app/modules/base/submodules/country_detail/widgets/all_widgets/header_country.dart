@@ -1,7 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../../../core/constants/constants.dart';
 
 class HeaderCountry extends StatelessWidget {
@@ -16,10 +14,10 @@ class HeaderCountry extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(100),
+          bottomRight: Radius.circular(SizeConst.screenWidth * 0.4),
         ),
       ),
-      height: (SizeConst.screenHeight * 0.17) + SizeConst.paddingVertical,
+      height: (SizeConst.screenHeight * 0.1) + SizeConst.paddingVertical,
       padding: EdgeInsets.only(
         bottom: SizeConst.paddingVertical,
       ),
@@ -27,20 +25,6 @@ class HeaderCountry extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            height: SizeConst.screenHeight * 0.07,
-            width: SizeConst.screenWidth,
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConst.paddingHorizontal,
-            ),
-            alignment: Alignment.topLeft,
-            child: IconButton(
-              icon: Icon(
-                Ionicons.ios_arrow_back,
-              ),
-              onPressed: () => Modular.to.pop(),
-            ),
-          ),
           Container(
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.symmetric(

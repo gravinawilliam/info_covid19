@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/constants/constants.dart';
 import 'home_controller.dart';
 import 'widgets/all_widgets/dados_locais_covid19.dart';
-import 'widgets/all_widgets/test_covid19.dart';
 import 'widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +20,21 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Observer(
       builder: (_) {
         return Scaffold(
-          drawer: Drawer(),
+          drawer: Drawer(
+            elevation: 0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: SizeConst.statusBar,
+                ),
+                SwitchThemes(
+                  controller: controller,
+                ),
+              ],
+            ),
+          ),
           appBar: AppBar(
             backgroundColor: Theme.of(context).primaryColor,
             elevation: 0,
@@ -29,16 +43,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               style: Theme.of(context).textTheme.headline1,
             ),
             centerTitle: true,
-            leading: IconButton(
-              icon: Icon(
-                Ionicons.ios_menu,
-                color: IconsColorsConst.icons,
-                size: 32,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            ),
           ),
           body: (controller.countryModel != null)
               ? Container(
@@ -48,7 +52,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     physics: BouncingScrollPhysics(),
                     child: Column(
                       children: [
-                        TestCovid19(),
                         FeaturedNews(controller: controller),
                         DadosLocaisCovid19(controller: controller),
                       ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import '../../../../app_controller.dart';
 import '../../../../core/models/models.dart';
 import 'repositories/interfaces/home_repository_interface.dart';
 
@@ -10,12 +11,13 @@ part 'home_controller.g.dart';
 class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
-  _HomeControllerBase(IHomeRepository this.repository) {
+  final AppController appController;
+  final IHomeRepository repository;
+
+  _HomeControllerBase(IHomeRepository this.repository, this.appController) {
     getListFeaturedNews();
     getDataCountry();
   }
-
-  final IHomeRepository repository;
 
   @observable
   ObservableStream<List<NewsModel>> newsList;

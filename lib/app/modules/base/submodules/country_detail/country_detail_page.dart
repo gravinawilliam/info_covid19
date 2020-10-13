@@ -19,6 +19,10 @@ class _CountryDetailPageState
     final CountryModel countryModel = ModalRoute.of(context).settings.arguments;
     SizeConst().init(context);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        elevation: 0,
+      ),
       body: Container(
         height: SizeConst.screenHeight + SizeConst.statusBar,
         width: SizeConst.screenWidth,
@@ -26,10 +30,6 @@ class _CountryDetailPageState
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              Container(
-                height: SizeConst.statusBar,
-                color: Theme.of(context).primaryColor,
-              ),
               HeaderCountry(
                 imageUrl: countryModel.countryInfo.flag,
                 name: countryModel.country.toString(),

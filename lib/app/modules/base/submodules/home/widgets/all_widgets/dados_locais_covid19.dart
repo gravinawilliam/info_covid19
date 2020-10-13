@@ -18,6 +18,7 @@ class DadosLocaisCovid19 extends StatelessWidget {
     return Observer(
       builder: (_) {
         return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ButtonsLocais(
               country: controller.countryModel.country,

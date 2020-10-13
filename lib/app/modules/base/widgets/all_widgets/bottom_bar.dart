@@ -44,17 +44,6 @@ class BottomBar extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            FancyBottomItem(
-              title: Text(
-                "Notícias",
-                style: Theme.of(context).textTheme.button,
-              ),
-              icon: Icon(
-                FontAwesomeIcons.solidNewspaper,
-                size: 32,
-                color: Colors.white,
-              ),
-            ),
           ],
         ),
       );
