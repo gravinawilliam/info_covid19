@@ -1,11 +1,11 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:info_covid19/app/modules/test_covid19/test_covid19_module.dart';
 import 'app_controller.dart';
 import 'app_widget.dart';
 import 'core/constants/constants.dart';
 import 'modules/base/base_module.dart';
+import 'modules/base/submodules/country_detail/country_detail_module.dart';
 
 class AppModule extends MainModule {
   @override
@@ -22,8 +22,8 @@ class AppModule extends MainModule {
           transition: TransitionType.fadeIn,
         ),
         ModularRouter(
-          RoutersConst.testCovid19,
-          module: TestCovid19Module(),
+          RoutersConst.countryDetail,
+          module: CountryDetailModule(),
           transition: TransitionType.fadeIn,
         ),
       ];

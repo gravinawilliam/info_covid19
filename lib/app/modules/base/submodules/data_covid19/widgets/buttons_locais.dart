@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../../../../core/constants/constants.dart';
+import '../../../../../core/constants/constants.dart';
 import 'button_local.dart';
 
 class ButtonsLocais extends StatelessWidget {
-  final String country;
-
-  const ButtonsLocais({
-    this.country,
-  });
-
   @override
   Widget build(BuildContext context) {
     SizeConst().init(context);
@@ -26,7 +20,10 @@ class ButtonsLocais extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         children: [
           ButtonLocal(
-            title: country,
+            title: "Paises",
+            isUltimo: false,
+            isSelected: true,
+            onTap: () {},
           ),
         ],
       ),

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/core/constants/constants.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/widgets/all_widgets/card_data_covid19.dart';
+import '../../../../../../core/constants/constants.dart';
+import '../widgets.dart';
 
-class CardsDataCovid extends StatelessWidget {
+class CardsDataCovid19 extends StatelessWidget {
   final int casosConfirmados;
   final int ativos;
   final int obitos;
   final int recuperados;
   final bool isOpacity;
 
-  const CardsDataCovid({
+  const CardsDataCovid19({
     this.casosConfirmados,
     this.ativos,
     this.obitos,
@@ -29,7 +28,7 @@ class CardsDataCovid extends StatelessWidget {
         margin: EdgeInsets.symmetric(
           horizontal: SizeConst.paddingHorizontal,
         ),
-        height: SizeConst.screenHeight * 0.27,
+        alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -40,11 +39,13 @@ class CardsDataCovid extends StatelessWidget {
                   color: DataColorsConst.casosConfirmados,
                   number: casosConfirmados,
                   title: "Casos",
+                  width: 0.5,
                 ),
                 CardDataCovid19(
                   color: DataColorsConst.ativos,
                   number: ativos,
                   title: "Ativos",
+                  width: 0.5,
                 ),
               ],
             ),
@@ -55,11 +56,13 @@ class CardsDataCovid extends StatelessWidget {
                   color: DataColorsConst.recuperados,
                   number: recuperados,
                   title: "Recuperados",
+                  width: 0.5,
                 ),
                 CardDataCovid19(
                   color: DataColorsConst.obitos,
                   number: obitos,
                   title: "Obitos",
+                  width: 0.5,
                 ),
               ],
             ),

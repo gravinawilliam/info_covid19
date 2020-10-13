@@ -41,6 +41,7 @@ class ButtonStateTest extends StatelessWidget {
               child: Icon(
                 icon,
                 size: 32,
+                color: Colors.white,
               ),
             ),
             Container(

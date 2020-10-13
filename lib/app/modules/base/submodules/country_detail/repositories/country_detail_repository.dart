@@ -1,15 +1,15 @@
 import 'package:dio/native_imp.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'interfaces/test_covid19_repository_interface.dart';
+import 'interfaces/country_detail_repository_interface.dart';
 
-part 'test_covid19_repository.g.dart';
+part 'country_detail_repository.g.dart';
 
 @Injectable()
-class TestCovid19Repository implements ITestCovid19Repository {
+class CountryDetailRepository implements ICountryDetailRepository {
   final DioForNative client;
 
-  TestCovid19Repository(this.client);
+  CountryDetailRepository(this.client);
 
   Future fetchPost() async {
     final response =

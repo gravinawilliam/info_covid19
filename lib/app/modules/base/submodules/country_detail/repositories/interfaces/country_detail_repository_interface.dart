@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-abstract class ITestCovid19Repository implements Disposable {
+abstract class ICountryDetailRepository implements Disposable {
   Future fetchPost();
 }

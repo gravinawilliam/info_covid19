@@ -1,11 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:info_covid19/app/core/constants/all_constants/routers_const.dart';
-import 'repositories/data_covid19_repository.dart';
-import 'data_covid19_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
+import 'package:flutter/material.dart';
+import '../../../../core/constants/constants.dart';
+import 'data_covid19_controller.dart';
 import 'data_covid19_page.dart';
+import 'repositories/data_covid19_repository.dart';
 
 class DataCovid19Module extends WidgetModule {
   @override
@@ -20,6 +19,8 @@ class DataCovid19Module extends WidgetModule {
         ModularRouter(
           RoutersConst.dataCovid19,
           child: (_, args) => DataCovid19Page(),
+          transition: TransitionType.upToDown,
+          duration: Duration(seconds: 1),
         ),
       ];
 

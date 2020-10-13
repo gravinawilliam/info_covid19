@@ -30,6 +30,7 @@ class DataColorsConst {
   static const Color recuperados = Color(0xFF63B995);
   static const Color ativos = Color(0xFFEEAF1C);
   static const Color obitos = Color(0xFFFF9585);
+  static const Color populacao = Color(0xFF003D5B);
 }
 
 class DarkColorsConst {

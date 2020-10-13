@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/home_controller.dart';
-
+import '../../home_controller.dart';
 import '../widgets.dart';
 import 'button_ver_grafico.dart';
 import 'buttons_locais.dart';
@@ -19,13 +18,14 @@ class DadosLocaisCovid19 extends StatelessWidget {
     return Observer(
       builder: (_) {
         return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ButtonsLocais(
               country: controller.countryModel.country,
             ),
             Stack(
               children: [
-                CardsDataCovid(
+                CardsDataCovid19(
                   obitos: controller.countryModel.deaths,
                   recuperados: controller.countryModel.recovered,
                   ativos: controller.countryModel.active,

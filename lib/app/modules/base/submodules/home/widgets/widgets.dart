@@ -1,4 +1,11 @@
+export 'all_widgets/button_local.dart';
 export 'all_widgets/button_state_test.dart';
+export 'all_widgets/button_ver_grafico.dart';
+export 'all_widgets/buttons_locais.dart';
+export 'all_widgets/card_data_covid19.dart';
+export 'all_widgets/cards_data_covid.dart';
+export 'all_widgets/dados_locais_covid19.dart';
+export 'all_widgets/elemento_legenda.dart';
 export 'all_widgets/featured_news.dart';
 export 'all_widgets/grafico.dart';
-export 'all_widgets/test_covid19.dart';
+export 'all_widgets/switch_themes.dart';

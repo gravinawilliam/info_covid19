@@ -7,7 +7,7 @@ part of 'base_controller.dart';
 // **************************************************************************
 
 final $BaseController = BindInject(
-  (i) => BaseController(i<AppController>()),
+  (i) => BaseController(),
   singleton: true,
   lazy: true,
 );
