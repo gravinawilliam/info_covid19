@@ -33,7 +33,7 @@ class CardCountry extends StatelessWidget {
           vertical: SizeConst.paddingVertical * .35,
           horizontal: SizeConst.paddingHorizontal,
         ),
-        height: SizeConst.screenHeight * 0.09,
+        height: SizeConst.screenHeight * 0.12,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -41,7 +41,7 @@ class CardCountry extends StatelessWidget {
               width:
                   (SizeConst.screenWidth - (3 * SizeConst.paddingHorizontal)) *
                       .38,
-              height: SizeConst.screenHeight * 0.09,
+              height: SizeConst.screenHeight * 0.12,
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(11),
@@ -73,7 +73,7 @@ class CardCountry extends StatelessWidget {
                       name,
                       textAlign: TextAlign.start,
                       style: Theme.of(context).textTheme.button.copyWith(
-                            fontSize: 17,
+                            fontSize: 18,
                           ),
                       maxLines: 1,
                     ),
@@ -89,9 +89,11 @@ class CardCountry extends StatelessWidget {
                       children: [
                         SvgPicture.asset(ImagesConst.paciente),
                         Text(
-                          "  $confirmados casos".toUpperCase(),
+                          " $confirmados casos".toUpperCase(),
                           textAlign: TextAlign.left,
-                          style: Theme.of(context).textTheme.button,
+                          style: Theme.of(context).textTheme.button.copyWith(
+                            fontSize: 18
+                          ),
                           maxLines: 2,
                         ),
                       ],

@@ -127,9 +127,11 @@ class Grafico extends StatelessWidget {
               margin: EdgeInsets.only(
                 top: SizeConst.paddingVertical * 0.5,
               ),
+              alignment: Alignment.center,
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
-                runAlignment: WrapAlignment.spaceBetween,
+                runAlignment: WrapAlignment.center,
+                alignment: WrapAlignment.center,
                 children: [
                   ElementoLegenda(
                     color: DataColorsConst.ativos,
