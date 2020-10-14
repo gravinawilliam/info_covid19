@@ -124,7 +124,8 @@ class GraficoCountryDetail extends StatelessWidget {
             ),
             child: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
-              runAlignment: WrapAlignment.spaceBetween,
+                runAlignment: WrapAlignment.center,
+                alignment: WrapAlignment.center,
               children: [
                 ElementoLegenda(
                   color: DataColorsConst.ativos,

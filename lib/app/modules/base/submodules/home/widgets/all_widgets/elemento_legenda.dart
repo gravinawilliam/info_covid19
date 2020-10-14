@@ -11,7 +11,7 @@ class ElementoLegenda extends StatelessWidget {
     var tamanhoCirculosLegenda = 13.0;
     return Container(
       alignment: Alignment.center,
-      width: (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * 0.33,
+      width: (SizeConst.screenWidth - (2 * SizeConst.paddingHorizontal)) * 0.5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
