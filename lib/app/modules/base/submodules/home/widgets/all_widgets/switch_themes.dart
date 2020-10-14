@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/home_controller.dart';
 import '../../../../../../core/constants/constants.dart';
+import '../../home_controller.dart';
 
 class SwitchThemes extends StatelessWidget {
   final HomeController controller;

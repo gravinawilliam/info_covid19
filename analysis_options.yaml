@@ -3,3 +3,5 @@ linter:
   rules:
     public_member_api_docs: false
     unnecessary_lambdas: false
+    avoid_catches_without_on_clauses: false
+    type_annotate_public_apis: false
