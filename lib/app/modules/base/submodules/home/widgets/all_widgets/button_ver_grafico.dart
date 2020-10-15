@@ -24,7 +24,7 @@ class ButtonVerGrafico extends StatelessWidget {
       child: FlatButton(
         onPressed: onPressed,
         child: Text(
-          "Ver Gráfico",
+          LocaleProvider.of(context).see_graph,
           style: Theme.of(context).textTheme.button,
         ),
       ),

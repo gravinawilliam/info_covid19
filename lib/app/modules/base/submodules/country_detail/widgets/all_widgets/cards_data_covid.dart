@@ -29,7 +29,7 @@ class CardsDataCovid extends StatelessWidget {
           CardDataCovid19(
             color: DataColorsConst.populacao,
             number: population,
-            title: "População",
+            title: LocaleProvider.of(context).population,
             width: 1,
           ),
           Row(
@@ -38,13 +38,13 @@ class CardsDataCovid extends StatelessWidget {
               CardDataCovid19(
                 color: DataColorsConst.casosConfirmados,
                 number: casosConfirmados,
-                title: "Casos",
+                title: LocaleProvider.of(context).cases,
                 width: 0.5,
               ),
               CardDataCovid19(
                 color: DataColorsConst.ativos,
                 number: ativos,
-                title: "Ativos",
+                title: LocaleProvider.of(context).active,
                 width: 0.5,
               ),
             ],
@@ -55,13 +55,13 @@ class CardsDataCovid extends StatelessWidget {
               CardDataCovid19(
                 color: DataColorsConst.recuperados,
                 number: recuperados,
-                title: "Recuperados",
+                title: LocaleProvider.of(context).recovered,
                 width: 0.5,
               ),
               CardDataCovid19(
                 color: DataColorsConst.obitos,
                 number: obitos,
-                title: "Obitos",
+                title: LocaleProvider.of(context).deaths,
                 width: 0.5,
               ),
             ],

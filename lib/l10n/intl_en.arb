@@ -1,4 +1,17 @@
 {
-  "title": "info covid-19",
-  "Brazil": "Brazil"
+  "home": "Home",
+  "covid19_data": "COVID-19 Data",
+  "dark_mode": "Dark Mode",
+  "graph_title": "% based on the number of cases.",
+  "active": "Active",
+  "recovered": "Recovered",
+  "deaths": "Deaths",
+  "cases": "Cases",
+  "news": "News",
+  "see_graph": "See Graph",
+  "loading": "Loading",
+  "empty_list": "Empty list",
+  "countries": "Countries",
+  "population": "Population"
 }
+

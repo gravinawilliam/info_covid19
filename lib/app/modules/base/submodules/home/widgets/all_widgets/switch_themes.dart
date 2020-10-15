@@ -17,7 +17,7 @@ class SwitchThemes extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "Dark mode",
+                LocaleProvider.of(context).dark_mode,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
               Switch(

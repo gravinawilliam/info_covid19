@@ -44,7 +44,7 @@ class Grafico extends StatelessWidget {
                 bottom: SizeConst.paddingVertical * 0.5,
               ),
               child: Text(
-                "% baseada em cima da quantidade de casos.",
+                LocaleProvider.of(context).graph_title,
                 style: Theme.of(context).textTheme.bodyText1,
                 textAlign: TextAlign.left,
               ),
@@ -135,15 +135,15 @@ class Grafico extends StatelessWidget {
                 children: [
                   ElementoLegenda(
                     color: DataColorsConst.ativos,
-                    title: "Ativos",
+                    title: LocaleProvider.of(context).active,
                   ),
                   ElementoLegenda(
                     color: DataColorsConst.recuperados,
-                    title: "Recuperados",
+                    title: LocaleProvider.of(context).recovered,
                   ),
                   ElementoLegenda(
                     color: DataColorsConst.obitos,
-                    title: "Obitos",
+                    title: LocaleProvider.of(context).deaths,
                   ),
                 ],
               ),

@@ -33,21 +33,141 @@ class LocaleProvider {
     return Localizations.of<LocaleProvider>(context, LocaleProvider);
   }
 
-  /// `info covid-19`
-  String get title {
+  /// `Home`
+  String get home {
     return Intl.message(
-      'info covid-19',
-      name: 'title',
+      'Home',
+      name: 'home',
       desc: '',
       args: [],
     );
   }
 
-  /// `Brazil`
-  String get Brazil {
+  /// `COVID-19 Data`
+  String get covid19_data {
     return Intl.message(
-      'Brazil',
-      name: 'Brazil',
+      'COVID-19 Data',
+      name: 'covid19_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get dark_mode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'dark_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `% based on the number of cases.`
+  String get graph_title {
+    return Intl.message(
+      '% based on the number of cases.',
+      name: 'graph_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message(
+      'Active',
+      name: 'active',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recovered`
+  String get recovered {
+    return Intl.message(
+      'Recovered',
+      name: 'recovered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deaths`
+  String get deaths {
+    return Intl.message(
+      'Deaths',
+      name: 'deaths',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cases`
+  String get cases {
+    return Intl.message(
+      'Cases',
+      name: 'cases',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `News`
+  String get news {
+    return Intl.message(
+      'News',
+      name: 'news',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See Graph`
+  String get see_graph {
+    return Intl.message(
+      'See Graph',
+      name: 'see_graph',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading`
+  String get loading {
+    return Intl.message(
+      'Loading',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Empty list`
+  String get empty_list {
+    return Intl.message(
+      'Empty list',
+      name: 'empty_list',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Countries`
+  String get countries {
+    return Intl.message(
+      'Countries',
+      name: 'countries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Population`
+  String get population {
+    return Intl.message(
+      'Population',
+      name: 'population',
       desc: '',
       args: [],
     );

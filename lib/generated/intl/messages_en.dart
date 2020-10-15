@@ -21,7 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "Brazil" : MessageLookupByLibrary.simpleMessage("Brazil"),
-    "title" : MessageLookupByLibrary.simpleMessage("info covid-19")
+    "active" : MessageLookupByLibrary.simpleMessage("Active"),
+    "cases" : MessageLookupByLibrary.simpleMessage("Cases"),
+    "countries" : MessageLookupByLibrary.simpleMessage("Countries"),
+    "covid19_data" : MessageLookupByLibrary.simpleMessage("COVID-19 Data"),
+    "dark_mode" : MessageLookupByLibrary.simpleMessage("Dark Mode"),
+    "deaths" : MessageLookupByLibrary.simpleMessage("Deaths"),
+    "empty_list" : MessageLookupByLibrary.simpleMessage("Empty list"),
+    "graph_title" : MessageLookupByLibrary.simpleMessage("% based on the number of cases."),
+    "home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "loading" : MessageLookupByLibrary.simpleMessage("Loading"),
+    "news" : MessageLookupByLibrary.simpleMessage("News"),
+    "population" : MessageLookupByLibrary.simpleMessage("Population"),
+    "recovered" : MessageLookupByLibrary.simpleMessage("Recovered"),
+    "see_graph" : MessageLookupByLibrary.simpleMessage("See Graph")
   };
 }
