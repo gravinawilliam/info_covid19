@@ -23,7 +23,7 @@ class _DataCovid19PageState
           backgroundColor: Theme.of(context).primaryColor,
           elevation: 0,
           title: Text(
-            "Dados covid-19".toUpperCase(),
+            LocaleProvider.of(context).covid19_data.toUpperCase(),
             style: Theme.of(context).textTheme.headline1,
           ),
           centerTitle: true,
@@ -47,7 +47,7 @@ class _DataCovid19PageState
                           children: [
                             CircularProgressIndicator(),
                             Text(
-                              "Carregando",
+                              LocaleProvider.of(context).loading,
                               style: TextStyle(
                                 fontSize: 32,
                               ),
@@ -88,7 +88,7 @@ class _DataCovid19PageState
                       }
                     } else {
                       return Center(
-                        child: Text("Lista vazia"),
+                        child: Text(LocaleProvider.of(context).empty_list),
                       );
                     }
                   },

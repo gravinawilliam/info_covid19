@@ -24,7 +24,7 @@ class FeaturedNews extends StatelessWidget {
           ),
           width: SizeConst.screenWidth - 2 * SizeConst.paddingHorizontal,
           child: Text(
-            "Notícias",
+            LocaleProvider.of(context).news,
             style: Theme.of(context).textTheme.subtitle1,
           ),
         ),

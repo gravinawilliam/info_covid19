@@ -12,6 +12,7 @@ class DataCovid19Controller = _DataCovid19ControllerBase
 
 abstract class _DataCovid19ControllerBase with Store {
   final IDataCovid19Repository repository;
+  // ignore: type_init_formals
   _DataCovid19ControllerBase(IDataCovid19Repository this.repository) {
     getAllCountries();
   }
@@ -25,6 +26,7 @@ abstract class _DataCovid19ControllerBase with Store {
     try {
       final response = await repository.getAllCountries();
       status = DataCovid19Status.success..value = response;
+    // ignore: avoid_catches_without_on_clauses
     } catch (e) {
       status = DataCovid19Status.error..value = e;
     }

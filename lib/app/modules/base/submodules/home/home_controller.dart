@@ -14,6 +14,7 @@ abstract class _HomeControllerBase with Store {
   final AppController appController;
   final IHomeRepository repository;
 
+  // ignore: type_init_formals
   _HomeControllerBase(IHomeRepository this.repository, this.appController) {
     getListFeaturedNews();
     getDataCountry();
@@ -32,7 +33,7 @@ abstract class _HomeControllerBase with Store {
   double opacidadeCardsDatacovid = 1.0;
 
   @action
-  trocaOpacidadeDataCovid19() {
+  void trocaOpacidadeDataCovid19() {
     isOpacity = !isOpacity;
   }
 
@@ -48,10 +49,12 @@ abstract class _HomeControllerBase with Store {
   }
 
   @action
+  // ignore: type_annotate_public_apis
   getDataCountry() async {
     try {
       countryModel = await repository.getDataCountry();
-    } catch (exception) {
+    // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
       return CircularProgressIndicator();
     }
   }

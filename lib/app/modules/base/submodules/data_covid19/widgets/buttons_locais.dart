@@ -20,7 +20,7 @@ class ButtonsLocais extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         children: [
           ButtonLocal(
-            title: "Paises",
+            title: LocaleProvider.of(context).countries,
             isUltimo: false,
             isSelected: true,
             onTap: () {},

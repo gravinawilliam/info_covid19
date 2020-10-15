@@ -19,6 +19,7 @@ class CardCountry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConst().init(context);
+    var casesString = LocaleProvider.of(context).cases;
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -89,7 +90,7 @@ class CardCountry extends StatelessWidget {
                       children: [
                         SvgPicture.asset(ImagesConst.paciente),
                         Text(
-                          " $confirmados casos".toUpperCase(),
+                          "$confirmados $casesString".toUpperCase(),
                           textAlign: TextAlign.left,
                           style: Theme.of(context).textTheme.button.copyWith(
                             fontSize: 18

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../app_controller.dart';
-
 part 'base_controller.g.dart';
 
 @Injectable()
