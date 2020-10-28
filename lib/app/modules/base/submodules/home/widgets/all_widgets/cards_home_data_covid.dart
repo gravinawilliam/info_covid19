@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/constants/constants.dart';
-import '../../../home/widgets/all_widgets/card_data_covid19.dart';
+import '../../../../../../core/widgets/widgets.dart';
+import '../../home_controller.dart';
+import '../widgets.dart';
 
-class CardsDataCovid extends StatelessWidget {
+class CardsDataCovid19 extends StatelessWidget {
   final int casosConfirmados;
   final int ativos;
   final int obitos;
   final int recuperados;
-  final int population;
+  final HomeController controller;
 
-  const CardsDataCovid({
+  const CardsDataCovid19({
     this.casosConfirmados,
-    this.population,
+    this.controller,
     this.ativos,
     this.obitos,
     this.recuperados,
@@ -23,15 +25,10 @@ class CardsDataCovid extends StatelessWidget {
       margin: EdgeInsets.symmetric(
         horizontal: SizeConst.paddingHorizontal,
       ),
+      alignment: Alignment.topCenter,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          CardDataCovid19(
-            color: DataColorsConst.populacao,
-            number: population,
-            title: LocaleProvider.of(context).population,
-            width: 1,
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -65,6 +62,10 @@ class CardsDataCovid extends StatelessWidget {
                 width: 0.5,
               ),
             ],
+          ),
+          ButtonVerGrafico(
+            onPressed: controller.trocaIndexedStack,
+            nameButton: controller.nameButtonDataCovid,
           ),
         ],
       ),

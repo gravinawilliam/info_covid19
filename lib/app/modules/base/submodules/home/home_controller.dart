@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../app_controller.dart';
+import '../../../../core/constants/constants.dart';
 import '../../../../core/models/models.dart';
 import 'repositories/interfaces/home_repository_interface.dart';
 
@@ -18,6 +19,7 @@ abstract class _HomeControllerBase with Store {
   _HomeControllerBase(IHomeRepository this.repository, this.appController) {
     getListFeaturedNews();
     getDataCountry();
+    getDataContinent();
   }
 
   @observable
@@ -27,14 +29,26 @@ abstract class _HomeControllerBase with Store {
   CountryModel countryModel;
 
   @observable
-  bool isOpacity = true;
+  ContinentsModel continentModel;
+
+  @observable
+  int indexedStackDataCovid = 0;
+
+  @observable
+  String nameButtonDataCovid = LocaleProvider.current.see_graph;
 
   @observable
   double opacidadeCardsDatacovid = 1.0;
 
   @action
-  void trocaOpacidadeDataCovid19() {
-    isOpacity = !isOpacity;
+  void trocaIndexedStack() {
+    if (indexedStackDataCovid == 0) {
+      indexedStackDataCovid = 1;
+      nameButtonDataCovid = LocaleProvider.current.see_data;
+    } else {
+      indexedStackDataCovid = 0;
+      nameButtonDataCovid = LocaleProvider.current.see_graph;
+    }
   }
 
   @action
@@ -53,9 +67,28 @@ abstract class _HomeControllerBase with Store {
   getDataCountry() async {
     try {
       countryModel = await repository.getDataCountry();
-    // ignore: avoid_catches_without_on_clauses
+      // ignore: avoid_catches_without_on_clauses
     } catch (e) {
-      return CircularProgressIndicator();
+      return Container(
+        height: 300,
+        width: 300,
+        child: CircularProgressIndicator(),
+      );
+    }
+  }
+
+  @action
+  // ignore: type_annotate_public_apis
+  getDataContinent() async {
+    try {
+      continentModel = await repository.getDataContinent();
+      // ignore: avoid_catches_without_on_clauses
+    } catch (e) {
+      return Container(
+        height: 300,
+        width: 300,
+        child: CircularProgressIndicator(),
+      );
     }
   }
 }

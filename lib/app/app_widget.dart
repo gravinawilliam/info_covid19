@@ -8,9 +8,7 @@ import 'core/constants/constants.dart';
 class AppWidget extends StatelessWidget {
   final AppController controller;
 
-  const AppWidget({
-    this.controller,
-  });
+  const AppWidget({this.controller});
   @override
   Widget build(BuildContext context) => Observer(
         builder: (_) {

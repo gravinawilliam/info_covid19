@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import '../../../../../core/constants/constants.dart';
 import '../../../../../core/models/models.dart';
-
 import 'interfaces/data_covid19_repository_interface.dart';
-
 part 'data_covid19_repository.g.dart';
 
 @Injectable()
@@ -16,17 +15,40 @@ class DataCovid19Repository implements IDataCovid19Repository {
   @override
   Future getAllCountries() async {
     dio.interceptors.add(
-      DioCacheManager(CacheConfig(
-        baseUrl: "https://disease.sh/v3/covid-19/countries",
-      )).interceptor,
+      DioCacheManager(
+        CacheConfig(
+          baseUrl: DataConst.countriesUrl,
+        ),
+      ).interceptor,
     );
-    final response = await dio.get("https://disease.sh/v3/covid-19/countries",
-        options: buildCacheOptions(
-          Duration(hours: 12),
-        ));
-
+    final response = await dio.get(
+      DataConst.countriesUrl,
+      options: buildCacheOptions(
+        Duration(hours: 12),
+      ),
+    );
     return (response.data as List)
         .map((e) => CountryModel.fromJson(e))
+        .toList();
+  }
+
+  @override
+  Future getAllContinents() async {
+    dio.interceptors.add(
+      DioCacheManager(
+        CacheConfig(
+          baseUrl: DataConst.continentsUrl,
+        ),
+      ).interceptor,
+    );
+    final response = await dio.get(
+      DataConst.continentsUrl,
+      options: buildCacheOptions(
+        Duration(hours: 12),
+      ),
+    );
+    return (response.data as List)
+        .map((e) => ContinentsModel.fromJson(e))
         .toList();
   }
 

@@ -9,6 +9,8 @@ import 'intl/messages_all.dart';
 // **************************************************************************
 
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values
 
 class LocaleProvider {
   LocaleProvider();
@@ -123,11 +125,21 @@ class LocaleProvider {
     );
   }
 
-  /// `See Graph`
+  /// `See graph`
   String get see_graph {
     return Intl.message(
-      'See Graph',
+      'See graph',
       name: 'see_graph',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See data`
+  String get see_data {
+    return Intl.message(
+      'See data',
+      name: 'see_data',
       desc: '',
       args: [],
     );
@@ -168,6 +180,86 @@ class LocaleProvider {
     return Intl.message(
       'Population',
       name: 'population',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continnets`
+  String get continnets {
+    return Intl.message(
+      'Continnets',
+      name: 'continnets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `North America`
+  String get north_america {
+    return Intl.message(
+      'North America',
+      name: 'north_america',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Asia`
+  String get asia {
+    return Intl.message(
+      'Asia',
+      name: 'asia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `South America`
+  String get south_america {
+    return Intl.message(
+      'South America',
+      name: 'south_america',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Europe`
+  String get europe {
+    return Intl.message(
+      'Europe',
+      name: 'europe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Africa`
+  String get africa {
+    return Intl.message(
+      'Africa',
+      name: 'africa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Australia/Oceania`
+  String get australia_oceania {
+    return Intl.message(
+      'Australia/Oceania',
+      name: 'australia_oceania',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brazil`
+  String get brazil {
+    return Intl.message(
+      'Brazil',
+      name: 'brazil',
       desc: '',
       args: [],
     );

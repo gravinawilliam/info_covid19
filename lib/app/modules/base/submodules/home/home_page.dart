@@ -51,7 +51,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     child: Column(
                       children: [
                         FeaturedNews(controller: controller),
-                        DadosLocaisCovid19(controller: controller),
+                        DadosLocaisCovid19(),
                       ],
                     ),
                   ),

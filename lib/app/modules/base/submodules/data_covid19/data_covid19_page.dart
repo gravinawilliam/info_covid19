@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:md2_tab_indicator/md2_tab_indicator.dart';
 import '../../../../core/constants/constants.dart';
-import '../../../../core/models/models.dart';
 import 'data_covid19_controller.dart';
-import 'data_covid19_status.dart';
-import 'widgets/buttons_locais.dart';
-import 'widgets/card_country.dart';
+import 'widgets/list_continents/list_continents_widget.dart';
+import 'widgets/list_country/list_country_widget.dart';
 
 class DataCovid19Page extends StatefulWidget {
   @override
@@ -14,88 +12,79 @@ class DataCovid19Page extends StatefulWidget {
 }
 
 class _DataCovid19PageState
-    extends ModularState<DataCovid19Page, DataCovid19Controller> {
+    extends ModularState<DataCovid19Page, DataCovid19Controller>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConst().init(context);
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
-          elevation: 0,
-          title: Text(
-            LocaleProvider.of(context).covid19_data.toUpperCase(),
-            style: Theme.of(context).textTheme.headline1,
-          ),
-          centerTitle: true,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        elevation: 0,
+        title: Text(
+          LocaleProvider.of(context).covid19_data.toUpperCase(),
+          style: Theme.of(context).textTheme.headline1,
         ),
-        body: Container(
-          height: SizeConst.screenHeight,
-          width: SizeConst.screenWidth,
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                ButtonsLocais(),
-                Observer(
-                  // ignore: missing_return
-                  builder: (_) {
-                    if (controller.status == DataCovid19Status.loading) {
-                      return Container(
-                        alignment: Alignment.center,
-                        height: SizeConst.screenHeight,
-                        child: Column(
-                          children: [
-                            CircularProgressIndicator(),
-                            Text(
-                              LocaleProvider.of(context).loading,
-                              style: TextStyle(
-                                fontSize: 32,
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    } else if (controller.status == DataCovid19Status.success) {
-                      final list =
-                          controller.status.value as List<CountryModel>;
-                      if (list.isNotEmpty) {
-                        return ListView.builder(
-                          shrinkWrap: true,
-                          addAutomaticKeepAlives: true,
-                          itemCount: list.length,
-                          physics: BouncingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            var model = list[index];
-                            return CardCountry(
-                              bandeiraUrl: model.countryInfo.flag,
-                              confirmados: model.cases,
-                              name: model.country,
-                              onTap: () => Modular.to.pushNamed(
-                                RoutersConst.countryDetail,
-                                arguments: CountryModel(
-                                  active: model.active,
-                                  cases: model.cases,
-                                  country: model.country,
-                                  countryInfo: model.countryInfo,
-                                  population: model.population,
-                                  deaths: model.deaths,
-                                  recovered: model.recovered,
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      }
-                    } else {
-                      return Center(
-                        child: Text(LocaleProvider.of(context).empty_list),
-                      );
-                    }
-                  },
+        centerTitle: true,
+      ),
+      body: Container(
+        height: SizeConst.screenHeight,
+        width: SizeConst.screenWidth,
+        child: SingleChildScrollView(
+          physics: NeverScrollableScrollPhysics(),
+          child: Column(
+            children: [
+              DefaultTabController(
+                length: 2,
+                child: TabBar(
+                  controller: _tabController,
+                  labelStyle: Theme.of(context)
+                      .textTheme
+                      .bodyText1
+                      .copyWith(fontSize: 22),
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  labelColor: Theme.of(context).textSelectionColor,
+                  unselectedLabelColor:
+                      Theme.of(context).unselectedWidgetColor.withOpacity(0.8),
+                  isScrollable: true,
+                  indicator: MD2Indicator(
+                    indicatorSize: MD2IndicatorSize.full,
+                    indicatorHeight: 5,
+                    indicatorColor: Color(0xFF6F46A6),
+                  ),
+                  tabs: <Widget>[
+                    Tab(
+                      text: LocaleProvider.of(context).countries,
+                    ),
+                    Tab(
+                      text: LocaleProvider.of(context).continnets,
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              Container(
+                height: SizeConst.screenHeight,
+                alignment: Alignment.bottomCenter,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    ListCountryWidget(),
+                    ListContinentsWidget(),
+                  ],
+                ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

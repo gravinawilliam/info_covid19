@@ -3,14 +3,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../../core/constants/constants.dart';
 import 'base_controller.dart';
 import 'base_page.dart';
-import 'repositories/base_repository.dart';
+import 'submodules/continents_detail/continents_detail_module.dart';
 import 'submodules/country_detail/country_detail_module.dart';
+import 'submodules/data_covid19/data_covid19_module.dart';
 import 'submodules/home/home_module.dart';
 
 class BaseModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        $BaseRepository,
         $BaseController,
         Bind((i) => Dio()),
       ];
@@ -29,7 +29,17 @@ class BaseModule extends ChildModule {
         ModularRouter(
           RoutersConst.countryDetail,
           module: CountryDetailModule(),
-          transition: TransitionType.fadeIn,
+          transition: TransitionType.downToUp,
+        ),
+        ModularRouter(
+          RoutersConst.dataCovid19,
+          module: DataCovid19Module(),
+          transition: TransitionType.upToDown,
+        ),
+        ModularRouter(
+          RoutersConst.continentsDetail,
+          module: ContinentsDetailModule(),
+          transition: TransitionType.downToUp,
         ),
       ];
 

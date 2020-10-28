@@ -33,6 +33,8 @@ abstract class _AppControllerBase with Store {
         primaryColor: LightColorsConst.primary,
         scaffoldBackgroundColor: LightColorsConst.backgroundScaffold,
         accentColor: LightColorsConst.accent,
+        unselectedWidgetColor: LightColorsConst.textNoSelected,
+        textSelectionColor: LightColorsConst.textSelected,
         textTheme: TextTheme(
           //! title
           headline1: TextStyle(
@@ -88,6 +90,8 @@ abstract class _AppControllerBase with Store {
         primaryColor: DarkColorsConst.primary,
         scaffoldBackgroundColor: DarkColorsConst.backgroundScaffold,
         accentColor: DarkColorsConst.accent,
+        unselectedWidgetColor: DarkColorsConst.textNoSelected,
+        textSelectionColor: DarkColorsConst.textSelected,
         textTheme: TextTheme(
           //! title
           headline1: TextStyle(
@@ -155,6 +159,8 @@ abstract class _AppControllerBase with Store {
         primaryColor: DarkColorsConst.primary,
         scaffoldBackgroundColor: DarkColorsConst.backgroundScaffold,
         accentColor: DarkColorsConst.accent,
+        unselectedWidgetColor: DarkColorsConst.textNoSelected,
+        textSelectionColor: DarkColorsConst.textSelected,
         textTheme: TextTheme(
           //! title
           headline1: TextStyle(
@@ -210,6 +216,8 @@ abstract class _AppControllerBase with Store {
         primaryColor: LightColorsConst.primary,
         scaffoldBackgroundColor: LightColorsConst.backgroundScaffold,
         accentColor: LightColorsConst.accent,
+        unselectedWidgetColor: LightColorsConst.textNoSelected,
+        textSelectionColor: LightColorsConst.textSelected,
         textTheme: TextTheme(
           //! title
           headline1: TextStyle(

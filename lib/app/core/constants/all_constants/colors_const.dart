@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LightColorsConst {
   static const Color textSubtitle = Color(0xFF000000);
   static const Color textSelected = Color(0xFF000000);
-  static const Color textNoSelected = Color(0xFF9A9A9A);
+  static const Color textNoSelected = Color(0xFF616161);
   static const Color primary = Color(0xFF6F46A6);
   static const Color backgroundScaffold = Color(0xFFFFFFFF);
   static const Color accent = Color(0xFFFFFFFF);
@@ -36,7 +36,7 @@ class DataColorsConst {
 class DarkColorsConst {
   static const Color textSubtitle = Color(0xFFFFFFFF);
   static const Color textSelected = Color(0xFFFFFFFF);
-  static const Color textNoSelected = Color(0xFFE8E8E8);
+  static const Color textNoSelected = Color(0xFF616161);
   static const Color primary = Color(0xFF6F46A6);
   static const Color backgroundScaffold = Color(0xFF141420);
   static const Color accent = Color(0xFF68439A);

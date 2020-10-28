@@ -1,24 +1,29 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import '../../../../../../core/constants/constants.dart';
-import '../../../country_detail/country_detail_controller.dart';
-import '../../../home/widgets/all_widgets/elemento_legenda.dart';
+import '../../constants/constants.dart';
+import '../widgets.dart';
 
-class GraficoCountryDetail extends StatelessWidget {
+class Graphic extends StatelessWidget {
   final int populacao;
   final int ativos;
   final int casosConfirmados;
   final int recuperados;
   final int mortes;
-  final CountryDetailController controller;
+  final bool buttonOpacity;
+  final Function onPressButton;
+  final String nameButton;
+  final controller;
 
-  const GraficoCountryDetail({
+  const Graphic({
     @required this.populacao,
     @required this.ativos,
     @required this.casosConfirmados,
     @required this.recuperados,
-    @required this.controller,
     @required this.mortes,
+    @required this.controller,
+    @required this.buttonOpacity,
+    @required this.onPressButton,
+    @required this.nameButton,
   });
 
   @override
@@ -27,10 +32,9 @@ class GraficoCountryDetail extends StatelessWidget {
     var radius = SizeConst.screenWidth * .15;
     return Container(
       margin: EdgeInsets.only(
-        top: SizeConst.paddingVertical,
-        bottom: SizeConst.paddingVertical,
         left: SizeConst.paddingHorizontal,
         right: SizeConst.paddingHorizontal,
+        top: SizeConst.paddingVertical,
       ),
       child: Column(
         children: [
@@ -39,7 +43,7 @@ class GraficoCountryDetail extends StatelessWidget {
               bottom: SizeConst.paddingVertical * 0.5,
             ),
             child: Text(
-             LocaleProvider.of(context).graph_title,
+              LocaleProvider.of(context).graph_title,
               style: Theme.of(context).textTheme.bodyText1,
               textAlign: TextAlign.left,
             ),
@@ -122,24 +126,44 @@ class GraficoCountryDetail extends StatelessWidget {
             margin: EdgeInsets.only(
               top: SizeConst.paddingVertical * 0.5,
             ),
+            alignment: Alignment.center,
             child: Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
-                runAlignment: WrapAlignment.center,
-                alignment: WrapAlignment.center,
+              runAlignment: WrapAlignment.center,
+              alignment: WrapAlignment.center,
               children: [
                 ElementoLegenda(
                   color: DataColorsConst.ativos,
                   title: LocaleProvider.of(context).active,
+                  porcentagem: "${controller.calculaPorcentagem(
+                        casosConfirmados,
+                        ativos,
+                      ).toStringAsFixed(2)}%",
                 ),
                 ElementoLegenda(
                   color: DataColorsConst.recuperados,
                   title: LocaleProvider.of(context).recovered,
+                  porcentagem: "${controller.calculaPorcentagem(
+                        casosConfirmados,
+                        recuperados,
+                      ).toStringAsFixed(2)}%",
                 ),
                 ElementoLegenda(
                   color: DataColorsConst.obitos,
                   title: LocaleProvider.of(context).deaths,
+                  porcentagem: "${controller.calculaPorcentagem(
+                        casosConfirmados,
+                        mortes,
+                      ).toStringAsFixed(2)}%",
                 ),
               ],
+            ),
+          ),
+          Opacity(
+            opacity: buttonOpacity ? 1 : 0,
+            child: ButtonVerGrafico(
+              onPressed: onPressButton,
+              nameButton: nameButton,
             ),
           ),
         ],

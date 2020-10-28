@@ -44,5 +44,25 @@ class HomeRepository implements IHomeRepository {
   }
 
   @override
+  Future<ContinentsModel> getDataContinent() async {
+    dio.interceptors.add(
+      DioCacheManager(CacheConfig(
+        baseUrl:
+            "https://disease.sh/v3/covid-19/continents/South%20America?yesterday=true&twoDaysAgo=false&strict=true&allowNull=true",
+      )).interceptor,
+    );
+    final response = await dio.get(
+        "https://disease.sh/v3/covid-19/continents/South%20America?yesterday=true&twoDaysAgo=false&strict=true&allowNull=true",
+        options: buildCacheOptions(
+          Duration(hours: 12),
+        ));
+    if (response.statusCode != 200) {
+      throw Exception();
+    } else {
+      return ContinentsModel.fromJson(response.data);
+    }
+  }
+
+  @override
   void dispose() {}
 }
