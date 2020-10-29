@@ -55,7 +55,7 @@ class _ListContinentsWidgetState
                     arguments: ContinentsModel(
                       active: model.active,
                       cases: model.cases,
-                      continent: model.continent,
+                      continent: controller.translatesName(model.continent),
                       population: model.population,
                       deaths: model.deaths,
                       recovered: model.recovered,

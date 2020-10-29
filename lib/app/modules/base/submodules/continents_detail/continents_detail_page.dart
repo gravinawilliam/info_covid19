@@ -14,7 +14,7 @@ class _ContinentsDetailPageState
     extends ModularState<ContinentsDetailPage, ContinentsDetailController> {
   @override
   Widget build(BuildContext context) {
-    final ContinentsModel countryModel =
+    final ContinentsModel continentsModel =
         ModalRoute.of(context).settings.arguments;
     SizeConst().init(context);
     return Scaffold(
@@ -22,7 +22,7 @@ class _ContinentsDetailPageState
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         title: Text(
-          countryModel.continent,
+          continentsModel.continent,
           style: Theme.of(context).textTheme.headline1,
         ),
         centerTitle: true,
@@ -35,18 +35,18 @@ class _ContinentsDetailPageState
           child: Column(
             children: [
               CardsDataCovid(
-                ativos: countryModel.active,
-                casosConfirmados: countryModel.cases,
-                obitos: countryModel.deaths,
-                recuperados: countryModel.recovered,
-                population: countryModel.population,
+                ativos: continentsModel.active,
+                casosConfirmados: continentsModel.cases,
+                obitos: continentsModel.deaths,
+                recuperados: continentsModel.recovered,
+                population: continentsModel.population,
               ),
               Graphic(
-                populacao: countryModel.population,
-                ativos: countryModel.active,
-                casosConfirmados: countryModel.cases,
-                recuperados: countryModel.recovered,
-                mortes: countryModel.deaths,
+                populacao: continentsModel.population,
+                ativos: continentsModel.active,
+                casosConfirmados: continentsModel.cases,
+                recuperados: continentsModel.recovered,
+                mortes: continentsModel.deaths,
                 controller: controller,
                 buttonOpacity: false,
                 onPressButton: () {},
