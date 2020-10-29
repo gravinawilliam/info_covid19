@@ -42,7 +42,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             ),
             centerTitle: true,
           ),
-          body: (controller.countryModel != null)
+          body: (controller.countryModel != null &&
+                  controller.continentModel != null)
               ? Container(
                   height: SizeConst.screenHeight,
                   width: SizeConst.screenWidth,

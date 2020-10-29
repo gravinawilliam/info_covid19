@@ -7,3 +7,4 @@ export 'all_widgets/cards_home_data_covid.dart';
 export 'all_widgets/dados_locais_covid19.dart';
 export 'all_widgets/featured_news.dart';
 export 'all_widgets/switch_themes.dart';
+export 'all_widgets/tab_with_cards_and_graphic.dart';

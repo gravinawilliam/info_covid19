@@ -3,7 +3,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:md2_tab_indicator/md2_tab_indicator.dart';
 import '../../../../../../core/constants/constants.dart';
-import '../../../../../../core/widgets/widgets.dart';
 import '../../home_controller.dart';
 import '../widgets.dart';
 
@@ -67,51 +66,21 @@ class _DadosLocaisCovid19State
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  IndexedStack(
-                    index: controller.indexedStackDataCovid,
-                    children: [
-                      CardsDataCovid19(
-                        obitos: controller.countryModel.deaths,
-                        recuperados: controller.countryModel.recovered,
-                        ativos: controller.countryModel.active,
-                        casosConfirmados: controller.countryModel.cases,
-                        controller: controller,
-                      ),
-                      Graphic(
-                        populacao: controller.countryModel.population,
-                        ativos: controller.countryModel.active,
-                        casosConfirmados: controller.countryModel.cases,
-                        recuperados: controller.countryModel.recovered,
-                        mortes: controller.countryModel.deaths,
-                        controller: controller,
-                        buttonOpacity: true,
-                        nameButton: controller.nameButtonDataCovid,
-                        onPressButton: controller.trocaIndexedStack,
-                      ),
-                    ],
+                  TabWithCardsAndGraphic(
+                    deaths: controller.countryModel.deaths,
+                    controller: controller,
+                    recovered: controller.countryModel.recovered,
+                    active: controller.countryModel.active,
+                    cases: controller.countryModel.cases,
+                    population: controller.countryModel.population,
                   ),
-                  IndexedStack(
-                    index: controller.indexedStackDataCovid,
-                    children: [
-                      CardsDataCovid19(
-                        obitos: controller.continentModel.deaths,
-                        recuperados: controller.continentModel.recovered,
-                        ativos: controller.continentModel.active,
-                        casosConfirmados: controller.continentModel.cases,
-                        controller: controller,
-                      ),
-                      Graphic(
-                        populacao: controller.continentModel.population,
-                        ativos: controller.continentModel.active,
-                        casosConfirmados: controller.continentModel.cases,
-                        recuperados: controller.continentModel.recovered,
-                        mortes: controller.continentModel.deaths,
-                        controller: controller,
-                        buttonOpacity: true,
-                        nameButton: controller.nameButtonDataCovid,
-                        onPressButton: controller.trocaIndexedStack,
-                      ),
-                    ],
+                  TabWithCardsAndGraphic(
+                    deaths: controller.continentModel.deaths,
+                    controller: controller,
+                    recovered: controller.continentModel.recovered,
+                    active: controller.continentModel.active,
+                    cases: controller.continentModel.cases,
+                    population: controller.continentModel.population,
                   ),
                 ],
               ),

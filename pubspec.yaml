@@ -40,7 +40,7 @@ dependencies:
   # injeção de dependencia
   flutter_modular: ^2.0.1
   # idioma e localização
-  intl_utils: "1.6.5"
+  intl_utils: ^1.9.0
   flutter_localizations:
     sdk: flutter
 

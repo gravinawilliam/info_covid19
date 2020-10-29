@@ -13,7 +13,7 @@ class DataCovid19Repository implements IDataCovid19Repository {
   DataCovid19Repository(this.dio);
 
   @override
-  Future getAllCountries() async {
+  Future<List<CountryModel>> getAllCountries() async {
     dio.interceptors.add(
       DioCacheManager(
         CacheConfig(
@@ -33,7 +33,7 @@ class DataCovid19Repository implements IDataCovid19Repository {
   }
 
   @override
-  Future getAllContinents() async {
+  Future<List<ContinentsModel>> getAllContinents() async {
     dio.interceptors.add(
       DioCacheManager(
         CacheConfig(
