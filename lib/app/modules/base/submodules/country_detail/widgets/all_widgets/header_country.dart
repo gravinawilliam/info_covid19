@@ -14,55 +14,31 @@ class HeaderCountry extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(SizeConst.screenWidth * 0.4),
+          bottomRight: Radius.circular(SizeConst.screenWidth * 0.2),
         ),
       ),
-      height: (SizeConst.screenHeight * 0.1) + SizeConst.paddingVertical,
+      height: (SizeConst.screenHeight * 0.17) + SizeConst.paddingVertical,
       padding: EdgeInsets.only(
         bottom: SizeConst.paddingVertical,
       ),
       width: SizeConst.screenWidth,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.symmetric(
-              horizontal: SizeConst.paddingHorizontal,
-            ),
-            height: SizeConst.screenHeight * 0.1,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: (SizeConst.screenWidth -
-                          3 * SizeConst.paddingHorizontal) *
-                      0.4,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(13),
-                    child: CachedNetworkImage(
-                      imageUrl: imageUrl,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  width: (SizeConst.screenWidth -
-                          3 * SizeConst.paddingHorizontal) *
-                      0.6,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: SizeConst.paddingHorizontal * 0.5,
-                  ),
-                  child: Text(
-                    name,
-                    style: Theme.of(context).textTheme.headline1,
-                    maxLines: 2,
-                  ),
-                ),
-              ],
+      child: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(
+          horizontal: SizeConst.paddingHorizontal,
+        ),
+        height: SizeConst.screenHeight * 0.17,
+        child: Container(
+          width:
+              (SizeConst.screenWidth - 3 * SizeConst.paddingHorizontal) * 0.7,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(13),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              fit: BoxFit.cover,
             ),
           ),
-        ],
+        ),
       ),
     );
   }

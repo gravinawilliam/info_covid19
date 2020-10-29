@@ -8,10 +8,18 @@
   "deaths": "Deaths",
   "cases": "Cases",
   "news": "News",
-  "see_graph": "See Graph",
+  "see_graph": "See graph",
+  "see_data": "See data",
   "loading": "Loading",
   "empty_list": "Empty list",
   "countries": "Countries",
-  "population": "Population"
+  "population": "Population",
+  "continnets": "Continnets",
+  "north_america": "North America",
+  "asia": "Asia",
+  "south_america": "South America",
+  "europe": "Europe",
+  "africa": "Africa",
+  "australia_oceania": "Australia/Oceania",
+  "brazil": "Brazil"
 }
-

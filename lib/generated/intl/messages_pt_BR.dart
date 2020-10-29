@@ -20,20 +20,32 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt_BR';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function> {
-    "active" : MessageLookupByLibrary.simpleMessage("Ativos"),
-    "cases" : MessageLookupByLibrary.simpleMessage("Casos"),
-    "countries" : MessageLookupByLibrary.simpleMessage("Países"),
-    "covid19_data" : MessageLookupByLibrary.simpleMessage("Dados COVID-19"),
-    "dark_mode" : MessageLookupByLibrary.simpleMessage("Tema escuro"),
-    "deaths" : MessageLookupByLibrary.simpleMessage("Obitos"),
-    "empty_list" : MessageLookupByLibrary.simpleMessage("Lista vazia"),
-    "graph_title" : MessageLookupByLibrary.simpleMessage("% baseada em cima da quantidade de casos."),
-    "home" : MessageLookupByLibrary.simpleMessage("Home"),
-    "loading" : MessageLookupByLibrary.simpleMessage("Carregando"),
-    "news" : MessageLookupByLibrary.simpleMessage("Notícias"),
-    "population" : MessageLookupByLibrary.simpleMessage("População"),
-    "recovered" : MessageLookupByLibrary.simpleMessage("Recuperados"),
-    "see_graph" : MessageLookupByLibrary.simpleMessage("Ver Gráfico")
-  };
+  static _notInlinedMessages(_) => <String, Function>{
+        "active": MessageLookupByLibrary.simpleMessage("Ativos"),
+        "africa": MessageLookupByLibrary.simpleMessage("África"),
+        "asia": MessageLookupByLibrary.simpleMessage("Ásia"),
+        "australia_oceania":
+            MessageLookupByLibrary.simpleMessage("Austrália/Oceania"),
+        "brazil": MessageLookupByLibrary.simpleMessage("Brasil"),
+        "cases": MessageLookupByLibrary.simpleMessage("Casos"),
+        "continnets": MessageLookupByLibrary.simpleMessage("Continentes"),
+        "countries": MessageLookupByLibrary.simpleMessage("Países"),
+        "covid19_data": MessageLookupByLibrary.simpleMessage("Dados COVID-19"),
+        "dark_mode": MessageLookupByLibrary.simpleMessage("Tema escuro"),
+        "deaths": MessageLookupByLibrary.simpleMessage("Obitos"),
+        "empty_list": MessageLookupByLibrary.simpleMessage("Lista vazia"),
+        "europe": MessageLookupByLibrary.simpleMessage("Europa"),
+        "graph_title": MessageLookupByLibrary.simpleMessage(
+            "% baseada em cima da quantidade de casos."),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "loading": MessageLookupByLibrary.simpleMessage("Carregando"),
+        "news": MessageLookupByLibrary.simpleMessage("Notícias"),
+        "north_america":
+            MessageLookupByLibrary.simpleMessage("América do Norte"),
+        "population": MessageLookupByLibrary.simpleMessage("População"),
+        "recovered": MessageLookupByLibrary.simpleMessage("Recuperados"),
+        "see_data": MessageLookupByLibrary.simpleMessage("Ver dados"),
+        "see_graph": MessageLookupByLibrary.simpleMessage("Ver gráfico"),
+        "south_america": MessageLookupByLibrary.simpleMessage("América do Sul")
+      };
 }

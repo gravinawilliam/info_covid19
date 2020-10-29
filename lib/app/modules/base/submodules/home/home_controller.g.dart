@@ -49,18 +49,51 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
-  final _$isOpacityAtom = Atom(name: '_HomeControllerBase.isOpacity');
+  final _$continentModelAtom = Atom(name: '_HomeControllerBase.continentModel');
 
   @override
-  bool get isOpacity {
-    _$isOpacityAtom.reportRead();
-    return super.isOpacity;
+  ContinentsModel get continentModel {
+    _$continentModelAtom.reportRead();
+    return super.continentModel;
   }
 
   @override
-  set isOpacity(bool value) {
-    _$isOpacityAtom.reportWrite(value, super.isOpacity, () {
-      super.isOpacity = value;
+  set continentModel(ContinentsModel value) {
+    _$continentModelAtom.reportWrite(value, super.continentModel, () {
+      super.continentModel = value;
+    });
+  }
+
+  final _$indexedStackDataCovidAtom =
+      Atom(name: '_HomeControllerBase.indexedStackDataCovid');
+
+  @override
+  int get indexedStackDataCovid {
+    _$indexedStackDataCovidAtom.reportRead();
+    return super.indexedStackDataCovid;
+  }
+
+  @override
+  set indexedStackDataCovid(int value) {
+    _$indexedStackDataCovidAtom.reportWrite(value, super.indexedStackDataCovid,
+        () {
+      super.indexedStackDataCovid = value;
+    });
+  }
+
+  final _$nameButtonDataCovidAtom =
+      Atom(name: '_HomeControllerBase.nameButtonDataCovid');
+
+  @override
+  String get nameButtonDataCovid {
+    _$nameButtonDataCovidAtom.reportRead();
+    return super.nameButtonDataCovid;
+  }
+
+  @override
+  set nameButtonDataCovid(String value) {
+    _$nameButtonDataCovidAtom.reportWrite(value, super.nameButtonDataCovid, () {
+      super.nameButtonDataCovid = value;
     });
   }
 
@@ -89,15 +122,23 @@ mixin _$HomeController on _HomeControllerBase, Store {
     return _$getDataCountryAsyncAction.run(() => super.getDataCountry());
   }
 
+  final _$getDataContinentAsyncAction =
+      AsyncAction('_HomeControllerBase.getDataContinent');
+
+  @override
+  Future getDataContinent() {
+    return _$getDataContinentAsyncAction.run(() => super.getDataContinent());
+  }
+
   final _$_HomeControllerBaseActionController =
       ActionController(name: '_HomeControllerBase');
 
   @override
-  dynamic trocaOpacidadeDataCovid19() {
+  void trocaIndexedStack() {
     final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
-        name: '_HomeControllerBase.trocaOpacidadeDataCovid19');
+        name: '_HomeControllerBase.trocaIndexedStack');
     try {
-      return super.trocaOpacidadeDataCovid19();
+      return super.trocaIndexedStack();
     } finally {
       _$_HomeControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -130,7 +171,9 @@ mixin _$HomeController on _HomeControllerBase, Store {
     return '''
 newsList: ${newsList},
 countryModel: ${countryModel},
-isOpacity: ${isOpacity},
+continentModel: ${continentModel},
+indexedStackDataCovid: ${indexedStackDataCovid},
+nameButtonDataCovid: ${nameButtonDataCovid},
 opacidadeCardsDatacovid: ${opacidadeCardsDatacovid}
     ''';
   }

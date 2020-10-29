@@ -3,26 +3,26 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/models/models.dart';
 import '../../../../core/widgets/widgets.dart';
-import 'country_detail_controller.dart';
-import 'widgets/widgets.dart';
+import 'continents_detail_controller.dart';
 
-class CountryDetailPage extends StatefulWidget {
+class ContinentsDetailPage extends StatefulWidget {
   @override
-  _CountryDetailPageState createState() => _CountryDetailPageState();
+  _ContinentsDetailPageState createState() => _ContinentsDetailPageState();
 }
 
-class _CountryDetailPageState
-    extends ModularState<CountryDetailPage, CountryDetailController> {
+class _ContinentsDetailPageState
+    extends ModularState<ContinentsDetailPage, ContinentsDetailController> {
   @override
   Widget build(BuildContext context) {
-    final CountryModel countryModel = ModalRoute.of(context).settings.arguments;
+    final ContinentsModel continentsModel =
+        ModalRoute.of(context).settings.arguments;
     SizeConst().init(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         title: Text(
-          countryModel.country,
+          continentsModel.continent,
           style: Theme.of(context).textTheme.headline1,
         ),
         centerTitle: true,
@@ -34,22 +34,19 @@ class _CountryDetailPageState
           physics: BouncingScrollPhysics(),
           child: Column(
             children: [
-              HeaderCountry(
-                imageUrl: countryModel.countryInfo.flag,
-              ),
               CardsDataCovid(
-                ativos: countryModel.active,
-                casosConfirmados: countryModel.cases,
-                obitos: countryModel.deaths,
-                recuperados: countryModel.recovered,
-                population: countryModel.population,
+                ativos: continentsModel.active,
+                casosConfirmados: continentsModel.cases,
+                obitos: continentsModel.deaths,
+                recuperados: continentsModel.recovered,
+                population: continentsModel.population,
               ),
               Graphic(
-                populacao: countryModel.population,
-                ativos: countryModel.active,
-                casosConfirmados: countryModel.cases,
-                recuperados: countryModel.recovered,
-                mortes: countryModel.deaths,
+                populacao: continentsModel.population,
+                ativos: continentsModel.active,
+                casosConfirmados: continentsModel.cases,
+                recuperados: continentsModel.recovered,
+                mortes: continentsModel.deaths,
                 controller: controller,
                 buttonOpacity: false,
                 onPressButton: () {},

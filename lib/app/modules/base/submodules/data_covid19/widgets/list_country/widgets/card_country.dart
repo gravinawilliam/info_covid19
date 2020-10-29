@@ -1,16 +1,20 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../../core/constants/constants.dart';
+import '../../../../../../../core/constants/constants.dart';
 
 class CardCountry extends StatelessWidget {
   final int confirmados;
+  final int quantidade;
+  final int index;
   final String name;
   final String bandeiraUrl;
   final Function onTap;
 
   const CardCountry({
     this.confirmados,
+    this.index,
+    this.quantidade,
     this.onTap,
     this.name,
     this.bandeiraUrl,
@@ -30,9 +34,11 @@ class CardCountry extends StatelessWidget {
           borderRadius: BorderRadius.circular(11),
           color: Theme.of(context).primaryColor,
         ),
-        margin: EdgeInsets.symmetric(
-          vertical: SizeConst.paddingVertical * .35,
-          horizontal: SizeConst.paddingHorizontal,
+        margin: EdgeInsets.only(
+          left: SizeConst.paddingHorizontal,
+          top: SizeConst.paddingVertical,
+          right: SizeConst.paddingHorizontal,
+          bottom: index + 1 == quantidade ? SizeConst.screenHeight * 0.3 : 0,
         ),
         height: SizeConst.screenHeight * 0.12,
         child: Row(
@@ -92,9 +98,10 @@ class CardCountry extends StatelessWidget {
                         Text(
                           "$confirmados $casesString".toUpperCase(),
                           textAlign: TextAlign.left,
-                          style: Theme.of(context).textTheme.button.copyWith(
-                            fontSize: 18
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .button
+                              .copyWith(fontSize: 18),
                           maxLines: 2,
                         ),
                       ],

@@ -5,6 +5,7 @@ import 'app_controller.dart';
 import 'app_widget.dart';
 import 'core/constants/constants.dart';
 import 'modules/base/base_module.dart';
+import 'modules/base/submodules/continents_detail/continents_detail_module.dart';
 import 'modules/base/submodules/country_detail/country_detail_module.dart';
 
 class AppModule extends MainModule {
@@ -24,7 +25,12 @@ class AppModule extends MainModule {
         ModularRouter(
           RoutersConst.countryDetail,
           module: CountryDetailModule(),
-          transition: TransitionType.fadeIn,
+          transition: TransitionType.downToUp,
+        ),
+        ModularRouter(
+          RoutersConst.continentsDetail,
+          module: ContinentsDetailModule(),
+          transition: TransitionType.downToUp,
         ),
       ];
 

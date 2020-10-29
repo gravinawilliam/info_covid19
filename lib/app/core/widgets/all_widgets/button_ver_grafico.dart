@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../../../../../core/constants/constants.dart';
+import '../../constants/constants.dart';
 
 class ButtonVerGrafico extends StatelessWidget {
   final Function onPressed;
+  final String nameButton;
 
   const ButtonVerGrafico({
     this.onPressed,
+    this.nameButton,
   });
 
   @override
@@ -24,7 +26,7 @@ class ButtonVerGrafico extends StatelessWidget {
       child: FlatButton(
         onPressed: onPressed,
         child: Text(
-          LocaleProvider.of(context).see_graph,
+          nameButton,
           style: Theme.of(context).textTheme.button,
         ),
       ),

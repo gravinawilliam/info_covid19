@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:info_covid19/generated/l10n.dart';
-
+import '../../../../core/constants/constants.dart';
 import '../../base_controller.dart';
 
 class BottomBar extends StatelessWidget {
@@ -35,7 +34,7 @@ class BottomBar extends StatelessWidget {
             ),
             FancyBottomItem(
               title: Text(
-                 LocaleProvider.of(context).covid19_data,
+                LocaleProvider.of(context).covid19_data,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.button,
               ),
