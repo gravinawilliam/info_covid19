@@ -10,6 +10,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flutter_animated_dialog: ^1.1.0
+  chips_choice: ^2.0.1
   md2_tab_indicator: ^1.0.2
   flutter_mobx: ^1.1.0+2
   mobx: ^1.2.1+2
@@ -20,26 +22,16 @@ dependencies:
   flutter_svg: ^0.19.0
   flutter:
     sdk: flutter
-  # bottom bar
   fancy_bottom_bar: ^0.0.1
-  # link para navegador
   url_launcher: ^5.7.0
-  #icons
   font_awesome_flutter: ^8.8.1
   flutter_icons: ^1.1.0
-  # hasura
   hasura_connect: ^1.2.2+1
-  # cache
   shared_preferences: ^0.5.11
-  # cache de image
   cached_network_image: ^2.3.2+1
-  # requisição http
   dio: ^3.0.10
   dio_http_cache: ^0.2.9
-  # gerenciamento de estado
-  # injeção de dependencia
   flutter_modular: ^2.0.1
-  # idioma e localização
   intl_utils: ^1.9.0
   flutter_localizations:
     sdk: flutter

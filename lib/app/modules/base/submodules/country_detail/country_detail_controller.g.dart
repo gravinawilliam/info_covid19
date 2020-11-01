@@ -34,6 +34,17 @@ mixin _$CountryDetailController on _CountryDetailControllerBase, Store {
   }
 
   @override
+  String translatesName(String nameContinent) {
+    final _$actionInfo = _$_CountryDetailControllerBaseActionController
+        .startAction(name: '_CountryDetailControllerBase.translatesName');
+    try {
+      return super.translatesName(nameContinent);
+    } finally {
+      _$_CountryDetailControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 

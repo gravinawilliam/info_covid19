@@ -40,6 +40,7 @@ class _ContinentsDetailPageState
                 obitos: continentsModel.deaths,
                 recuperados: continentsModel.recovered,
                 population: continentsModel.population,
+                tests: continentsModel.tests,
               ),
               Graphic(
                 populacao: continentsModel.population,

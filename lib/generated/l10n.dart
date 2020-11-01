@@ -245,10 +245,10 @@ class LocaleProvider {
     );
   }
 
-  /// `Australia/Oceania`
+  /// `Australia / Oceania`
   String get australia_oceania {
     return Intl.message(
-      'Australia/Oceania',
+      'Australia / Oceania',
       name: 'australia_oceania',
       desc: '',
       args: [],
@@ -264,6 +264,16 @@ class LocaleProvider {
       args: [],
     );
   }
+
+  /// `Graphics`
+  String get graphics {
+    return Intl.message(
+      'Graphics',
+      name: 'graphics',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<LocaleProvider> {
@@ -272,6 +282,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<LocaleProvider> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'es'),
       Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
     ];
   }

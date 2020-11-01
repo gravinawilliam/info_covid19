@@ -38,31 +38,54 @@ class _ListContinentsWidgetState
         } else if (controller.status == ListContinentsStatus.success) {
           final list = controller.status.value as List<ContinentsModel>;
           if (list.isNotEmpty) {
-            return ListView.builder(
-              shrinkWrap: true,
-              addAutomaticKeepAlives: true,
-              itemCount: list.length,
-              physics: BouncingScrollPhysics(),
-              itemBuilder: (context, index) {
-                var model = list[index];
-                return CardContinent(
-                  quantidade: list.length,
-                  index: index,
-                  confirmados: model.cases,
-                  name: controller.translatesName(model.continent),
-                  onTap: () => Modular.to.pushNamed(
-                    RoutersConst.continentsDetail,
-                    arguments: ContinentsModel(
-                      active: model.active,
-                      cases: model.cases,
-                      continent: controller.translatesName(model.continent),
-                      population: model.population,
-                      deaths: model.deaths,
-                      recovered: model.recovered,
+            return Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: SizeConst.paddingHorizontal,
+                vertical: SizeConst.paddingVertical,
+              ),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: SizeConst.paddingHorizontal,
+                  childAspectRatio: 1,
+                  mainAxisSpacing: SizeConst.paddingVertical,
+                ),
+                shrinkWrap: true,
+                addAutomaticKeepAlives: true,
+                itemCount: list.length,
+                physics: BouncingScrollPhysics(),
+                itemBuilder: (context, index) {
+                  var model = list[index];
+                  return CardContinent(
+                    quantidade: list.length,
+                    index: index,
+                    confirmados: model.cases,
+                    name: controller.translatesName(model.continent),
+                    onTap: () => Modular.to.pushNamed(
+                      RoutersConst.continentsDetail,
+                      arguments: ContinentsModel(
+                        active: model.active,
+                        cases: model.cases,
+                        continent: controller.translatesName(model.continent),
+                        population: model.population,
+                        deaths: model.deaths,
+                        recovered: model.recovered,
+                        tests: model.tests,
+                        activePerOneMillion: model.activePerOneMillion,
+                        casesPerOneMillion: model.casesPerOneMillion,
+                        criticalPerOneMillion: model.criticalPerOneMillion,
+                        critical: model.critical,
+                        deathsPerOneMillion: model.deathsPerOneMillion,
+                        recoveredPerOneMillion: model.recoveredPerOneMillion,
+                        testsPerOneMillion: model.testsPerOneMillion,
+                        todayCases: model.todayCases,
+                        todayDeaths: model.todayDeaths,
+                        todayRecovered: model.recovered,
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             );
           }
         } else {

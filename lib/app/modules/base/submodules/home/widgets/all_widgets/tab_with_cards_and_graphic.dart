@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:info_covid19/app/core/widgets/widgets.dart';
-import 'package:info_covid19/app/modules/base/submodules/home/home_controller.dart';
+import '../../../../../../core/widgets/widgets.dart';
+import '../../home_controller.dart';
 import '../widgets.dart';
 
 class TabWithCardsAndGraphic extends StatelessWidget {

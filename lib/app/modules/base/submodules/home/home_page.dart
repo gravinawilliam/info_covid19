@@ -43,14 +43,16 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             centerTitle: true,
           ),
           body: (controller.countryModel != null &&
-                  controller.continentModel != null)
+                  controller.continentModel != null &&
+                  controller.newsList != null)
               ? Container(
                   height: SizeConst.screenHeight,
                   width: SizeConst.screenWidth,
                   child: SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
+                    physics: RangeMaintainingScrollPhysics(),
                     child: Column(
                       children: [
+                        TestCovid19(),
                         FeaturedNews(controller: controller),
                         DadosLocaisCovid19(),
                       ],

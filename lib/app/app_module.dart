@@ -7,6 +7,7 @@ import 'core/constants/constants.dart';
 import 'modules/base/base_module.dart';
 import 'modules/base/submodules/continents_detail/continents_detail_module.dart';
 import 'modules/base/submodules/country_detail/country_detail_module.dart';
+import 'modules/base/submodules/test_covid19/test_covid19_module.dart';
 
 class AppModule extends MainModule {
   @override
@@ -31,6 +32,11 @@ class AppModule extends MainModule {
           RoutersConst.continentsDetail,
           module: ContinentsDetailModule(),
           transition: TransitionType.downToUp,
+        ),
+        ModularRouter(
+          RoutersConst.testCovid19,
+          module: TestCovid19Module(),
+          transition: TransitionType.rightToLeft,
         ),
       ];
 

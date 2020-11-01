@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a pt_BR locale. All the
+// This is a library that provides messages for a es locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -17,33 +17,33 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'pt_BR';
+  String get localeName => 'es';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "active" : MessageLookupByLibrary.simpleMessage("Ativos"),
+    "active" : MessageLookupByLibrary.simpleMessage("Activo"),
     "africa" : MessageLookupByLibrary.simpleMessage("África"),
-    "asia" : MessageLookupByLibrary.simpleMessage("Ásia"),
-    "australia_oceania" : MessageLookupByLibrary.simpleMessage("Austrália / Oceania"),
+    "asia" : MessageLookupByLibrary.simpleMessage("Asia"),
+    "australia_oceania" : MessageLookupByLibrary.simpleMessage("Australia / Oceanía"),
     "brazil" : MessageLookupByLibrary.simpleMessage("Brasil"),
     "cases" : MessageLookupByLibrary.simpleMessage("Casos"),
-    "continnets" : MessageLookupByLibrary.simpleMessage("Continentes"),
+    "continnets" : MessageLookupByLibrary.simpleMessage("Continnets"),
     "countries" : MessageLookupByLibrary.simpleMessage("Países"),
-    "covid19_data" : MessageLookupByLibrary.simpleMessage("Dados COVID-19"),
-    "dark_mode" : MessageLookupByLibrary.simpleMessage("Tema escuro"),
-    "deaths" : MessageLookupByLibrary.simpleMessage("Obitos"),
-    "empty_list" : MessageLookupByLibrary.simpleMessage("Lista vazia"),
+    "covid19_data" : MessageLookupByLibrary.simpleMessage("Datos COVID-19"),
+    "dark_mode" : MessageLookupByLibrary.simpleMessage("Modo oscuro"),
+    "deaths" : MessageLookupByLibrary.simpleMessage("Fallecidos"),
+    "empty_list" : MessageLookupByLibrary.simpleMessage("Lista vacía"),
     "europe" : MessageLookupByLibrary.simpleMessage("Europa"),
-    "graph_title" : MessageLookupByLibrary.simpleMessage("% baseada em cima da quantidade de casos."),
+    "graph_title" : MessageLookupByLibrary.simpleMessage("% basado en el número de casos."),
     "graphics" : MessageLookupByLibrary.simpleMessage("Gráficos"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
-    "loading" : MessageLookupByLibrary.simpleMessage("Carregando"),
-    "news" : MessageLookupByLibrary.simpleMessage("Notícias"),
-    "north_america" : MessageLookupByLibrary.simpleMessage("América do Norte"),
-    "population" : MessageLookupByLibrary.simpleMessage("População"),
-    "recovered" : MessageLookupByLibrary.simpleMessage("Recuperados"),
-    "see_data" : MessageLookupByLibrary.simpleMessage("Ver dados"),
+    "loading" : MessageLookupByLibrary.simpleMessage("Cargando"),
+    "news" : MessageLookupByLibrary.simpleMessage("News"),
+    "north_america" : MessageLookupByLibrary.simpleMessage("Norteamérica"),
+    "population" : MessageLookupByLibrary.simpleMessage("Población"),
+    "recovered" : MessageLookupByLibrary.simpleMessage("Recuperado"),
+    "see_data" : MessageLookupByLibrary.simpleMessage("Ver datos"),
     "see_graph" : MessageLookupByLibrary.simpleMessage("Ver gráfico"),
-    "south_america" : MessageLookupByLibrary.simpleMessage("América do Sul")
+    "south_america" : MessageLookupByLibrary.simpleMessage("Sudamerica")
   };
 }

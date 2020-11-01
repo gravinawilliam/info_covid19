@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:info_covid19/app/core/constants/all_constants/size_const.dart';
 
 class ButtonStateTest extends StatelessWidget {
   final double larguraWidget;
@@ -40,7 +41,7 @@ class ButtonStateTest extends StatelessWidget {
                       0.35,
               child: Icon(
                 icon,
-                size: 32,
+                size: SizeConst.screenHeight * 0.037,
                 color: Colors.white,
               ),
             ),

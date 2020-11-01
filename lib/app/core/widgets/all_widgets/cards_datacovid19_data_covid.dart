@@ -8,6 +8,8 @@ class CardsDataCovid extends StatelessWidget {
   final int obitos;
   final int recuperados;
   final int population;
+  final int tests;
+  final int critical;
 
   const CardsDataCovid({
     this.casosConfirmados,
@@ -15,6 +17,8 @@ class CardsDataCovid extends StatelessWidget {
     this.ativos,
     this.obitos,
     this.recuperados,
+    this.tests,
+    this.critical,
   });
 
   @override
@@ -24,7 +28,7 @@ class CardsDataCovid extends StatelessWidget {
         horizontal: SizeConst.paddingHorizontal,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CardDataCovid19(
             color: DataColorsConst.populacao,
@@ -62,6 +66,23 @@ class CardsDataCovid extends StatelessWidget {
                 color: DataColorsConst.obitos,
                 number: obitos,
                 title: LocaleProvider.of(context).deaths,
+                width: 0.5,
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CardDataCovid19(
+                color: Color(0xFF791E6E),
+                number: critical,
+                title: "critical",
+                width: 0.5,
+              ),
+              CardDataCovid19(
+                color: Color(0xFF000000),
+                number: tests,
+                title: "Testes",
                 width: 0.5,
               ),
             ],

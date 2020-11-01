@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:info_covid19/app/modules/base/submodules/test_covid19/test_covid19_module.dart';
 import '../../core/constants/constants.dart';
 import 'base_controller.dart';
 import 'base_page.dart';
@@ -40,6 +41,11 @@ class BaseModule extends ChildModule {
           RoutersConst.continentsDetail,
           module: ContinentsDetailModule(),
           transition: TransitionType.downToUp,
+        ),
+        ModularRouter(
+          RoutersConst.testCovid19,
+          module: TestCovid19Module(),
+          transition: TransitionType.rightToLeft,
         ),
       ];
 

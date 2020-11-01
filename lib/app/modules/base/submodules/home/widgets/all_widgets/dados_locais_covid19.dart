@@ -61,10 +61,11 @@ class _DadosLocaisCovid19State
               ),
             ),
             Container(
-              height: SizeConst.screenHeight * 0.7,
+              height: SizeConst.screenHeight * 0.6,
               alignment: Alignment.topCenter,
               child: TabBarView(
                 controller: _tabController,
+                physics: NeverScrollableScrollPhysics(),
                 children: [
                   TabWithCardsAndGraphic(
                     deaths: controller.countryModel.deaths,
