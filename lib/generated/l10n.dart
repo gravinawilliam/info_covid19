@@ -274,6 +274,26 @@ class LocaleProvider {
       args: [],
     );
   }
+
+  /// `Information`
+  String get information {
+    return Intl.message(
+      'Information',
+      name: 'information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data`
+  String get data {
+    return Intl.message(
+      'Data',
+      name: 'data',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<LocaleProvider> {

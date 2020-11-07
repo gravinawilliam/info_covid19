@@ -40,34 +40,43 @@ class _DataCovid19PageState
         width: SizeConst.screenWidth,
         child: SingleChildScrollView(
           physics: NeverScrollableScrollPhysics(),
-          child: Column(
+          child: ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
             children: [
-              DefaultTabController(
-                length: 2,
-                child: TabBar(
-                  controller: _tabController,
-                  labelStyle: Theme.of(context)
-                      .textTheme
-                      .bodyText1
-                      .copyWith(fontSize: 22),
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  labelColor: Theme.of(context).textSelectionColor,
-                  unselectedLabelColor:
-                      Theme.of(context).unselectedWidgetColor.withOpacity(0.8),
-                  isScrollable: true,
-                  indicator: MD2Indicator(
-                    indicatorSize: MD2IndicatorSize.full,
-                    indicatorHeight: 5,
-                    indicatorColor: Color(0xFF6F46A6),
+              Container(
+                margin: EdgeInsets.only(
+                  top: SizeConst.paddingVertical * 0.5,
+                ),
+                alignment: Alignment.center,
+                child: DefaultTabController(
+                  length: 2,
+                  child: TabBar(
+                    controller: _tabController,
+                    labelStyle: Theme.of(context)
+                        .textTheme
+                        .bodyText1
+                        .copyWith(fontSize: 22),
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    labelColor: Theme.of(context).textSelectionColor,
+                    unselectedLabelColor: Theme.of(context)
+                        .unselectedWidgetColor
+                        .withOpacity(0.8),
+                    isScrollable: true,
+                    indicator: MD2Indicator(
+                      indicatorSize: MD2IndicatorSize.full,
+                      indicatorHeight: 5,
+                      indicatorColor: Color(0xFF6F46A6),
+                    ),
+                    tabs: <Widget>[
+                      Tab(
+                        text: LocaleProvider.of(context).countries,
+                      ),
+                      Tab(
+                        text: LocaleProvider.of(context).continnets,
+                      ),
+                    ],
                   ),
-                  tabs: <Widget>[
-                    Tab(
-                      text: LocaleProvider.of(context).countries,
-                    ),
-                    Tab(
-                      text: LocaleProvider.of(context).continnets,
-                    ),
-                  ],
                 ),
               ),
               Container(

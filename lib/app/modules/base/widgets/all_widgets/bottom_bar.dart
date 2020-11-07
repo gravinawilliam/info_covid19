@@ -34,12 +34,24 @@ class BottomBar extends StatelessWidget {
             ),
             FancyBottomItem(
               title: Text(
-                LocaleProvider.of(context).covid19_data,
+                LocaleProvider.of(context).data,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.button,
               ),
               icon: Icon(
                 FontAwesomeIcons.solidListAlt,
+                size: 32,
+                color: Colors.white,
+              ),
+            ),
+            FancyBottomItem(
+              title: Text(
+                LocaleProvider.of(context).information,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.button,
+              ),
+              icon: Icon(
+                FontAwesomeIcons.info,
                 size: 32,
                 color: Colors.white,
               ),

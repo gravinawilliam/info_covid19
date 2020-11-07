@@ -26,11 +26,13 @@ class _DadosLocaisCovid19State
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        return ListView(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           children: [
             Container(
               margin: EdgeInsets.only(top: SizeConst.paddingVertical),
+              alignment: Alignment.center,
               child: DefaultTabController(
                 length: 2,
                 child: TabBar(

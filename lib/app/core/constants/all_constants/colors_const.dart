@@ -36,6 +36,7 @@ class DataColorsConst {
 class DarkColorsConst {
   static const Color textSubtitle = Color(0xFFFFFFFF);
   static const Color textSelected = Color(0xFFFFFFFF);
+  static const Color textTitle = Color(0xFFFFFFFF);
   static const Color textNoSelected = Color(0xFF616161);
   static const Color primary = Color(0xFF6F46A6);
   static const Color backgroundScaffold = Color(0xFF141420);

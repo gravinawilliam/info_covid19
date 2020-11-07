@@ -22,5 +22,7 @@
   "africa": "Africa",
   "australia_oceania": "Australia / Oceania",
   "brazil": "Brazil",
-  "graphics": "Graphics"
+  "graphics": "Graphics",
+  "information": "Information",
+  "data": "Data"
 }

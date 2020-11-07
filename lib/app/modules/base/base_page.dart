@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:info_covid19/app/modules/base/submodules/information/information_module.dart';
 import 'base_controller.dart';
 import 'submodules/data_covid19/data_covid19_module.dart';
 import 'submodules/home/home_module.dart';
@@ -20,6 +21,7 @@ class _BasePageState extends ModularState<BasePage, BaseController> {
         children: [
           HomeModule(),
           DataCovid19Module(),
+          InformationModule(),
         ],
       ),
       bottomNavigationBar: BottomBar(

@@ -59,7 +59,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     ),
                   ),
                 )
-              : Center(child: CircularProgressIndicator()),
+              : Center(
+                  child: CircularProgressIndicator(),
+                ),
         );
       },
     );

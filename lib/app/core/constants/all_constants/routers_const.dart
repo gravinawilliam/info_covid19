@@ -6,4 +6,5 @@ class RoutersConst {
   static const String testCovid19 = "/testCovid19";
   static const String countryDetail = "/countryDetail";
   static const String continentsDetail = "/continentsDetail";
+  static const String information = "/information";
 }
