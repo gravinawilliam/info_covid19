@@ -69,22 +69,54 @@ class _DadosLocaisCovid19State
                 controller: _tabController,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  TabWithCardsAndGraphic(
-                    deaths: controller.countryModel.deaths,
-                    controller: controller,
-                    recovered: controller.countryModel.recovered,
-                    active: controller.countryModel.active,
-                    cases: controller.countryModel.cases,
-                    population: controller.countryModel.population,
-                  ),
-                  TabWithCardsAndGraphic(
-                    deaths: controller.continentModel.deaths,
-                    controller: controller,
-                    recovered: controller.continentModel.recovered,
-                    active: controller.continentModel.active,
-                    cases: controller.continentModel.cases,
-                    population: controller.continentModel.population,
-                  ),
+                  controller.countryModel != null
+                      ? TabWithCardsAndGraphic(
+                          deaths: controller.countryModel.deaths,
+                          controller: controller,
+                          recovered: controller.countryModel.recovered,
+                          active: controller.countryModel.active,
+                          cases: controller.countryModel.cases,
+                          population: controller.countryModel.population,
+                        )
+                      : Container(
+                          child: Column(
+                            children: [
+                              CircularProgressIndicator(
+                                backgroundColor: Colors.white,
+                              ),
+                              Text("Dados carregando"),
+                            ],
+                          ),
+                          height: 300,
+                          margin:
+                              EdgeInsets.only(top: SizeConst.paddingVertical),
+                          width: 300,
+                          alignment: Alignment.center,
+                        ),
+                  controller.continentModel != null
+                      ? TabWithCardsAndGraphic(
+                          deaths: controller.continentModel.deaths,
+                          controller: controller,
+                          recovered: controller.continentModel.recovered,
+                          active: controller.continentModel.active,
+                          cases: controller.continentModel.cases,
+                          population: controller.continentModel.population,
+                        )
+                      : Container(
+                          child: Column(
+                            children: [
+                              CircularProgressIndicator(
+                                backgroundColor: Colors.white,
+                              ),
+                              Text("Dados carregando"),
+                            ],
+                          ),
+                          height: 300,
+                          margin:
+                              EdgeInsets.only(top: SizeConst.paddingVertical),
+                          width: 300,
+                          alignment: Alignment.center,
+                        ),
                 ],
               ),
             ),

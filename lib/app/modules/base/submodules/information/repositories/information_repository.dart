@@ -1,4 +1,3 @@
-import 'package:dio/native_imp.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 import 'package:info_covid19/app/core/documents/all_documents/tips_document.dart';

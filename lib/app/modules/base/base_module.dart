@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:info_covid19/app/modules/base/submodules/test_covid19/test_covid19_module.dart';
 import '../../core/constants/constants.dart';
 import 'base_controller.dart';
 import 'base_page.dart';
@@ -8,6 +7,7 @@ import 'submodules/continents_detail/continents_detail_module.dart';
 import 'submodules/country_detail/country_detail_module.dart';
 import 'submodules/data_covid19/data_covid19_module.dart';
 import 'submodules/home/home_module.dart';
+import 'submodules/test_covid19/test_covid19_module.dart';
 
 class BaseModule extends ChildModule {
   @override

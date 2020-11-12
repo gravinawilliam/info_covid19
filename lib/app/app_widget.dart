@@ -23,6 +23,7 @@ class AppWidget extends StatelessWidget {
               supportedLocales: [
                 Locale('en', 'US'),
                 Locale('pt', 'BR'),
+                Locale('es'),
               ],
               localizationsDelegates: [
                 LocaleProvider.delegate,

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:info_covid19/app/core/models/all_models/tips_model.dart';
 import 'package:info_covid19/app/core/models/models.dart';
 import 'package:mobx/mobx.dart';
@@ -35,29 +34,5 @@ abstract class _InformationControllerBase with Store {
   @action
   void getListSymptoms() {
     symptomsList = repository.getListSymptoms().asObservable();
-  }
-
-  @action
-  Color getColorBackgroundSymptoms(String status) {
-    var color;
-    switch (status) {
-      case "Comuns":
-        color = Colors.yellowAccent;
-        break;
-      default:
-    }
-    return color;
-  }
-
-  @action
-  Color getColorTextSymptoms(String status) {
-    var color;
-    switch (status) {
-      case "Comuns":
-        color = Colors.black;
-        break;
-      default:
-    }
-    return color;
   }
 }

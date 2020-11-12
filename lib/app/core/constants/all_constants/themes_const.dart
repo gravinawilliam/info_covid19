@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class ThemesConst {
   static ThemeData dark = ThemeData(
     appBarTheme: AppBarTheme(

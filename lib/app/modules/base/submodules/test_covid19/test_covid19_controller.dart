@@ -10,13 +10,13 @@ class TestCovid19Controller = _TestCovid19ControllerBase
 
 abstract class _TestCovid19ControllerBase with Store {
   @observable
-  var sintomasComunsContador = 0;
+  int sintomasComunsContador = 0;
 
   @observable
-  var sintomasMenosComunsContador = 0;
+  int sintomasMenosComunsContador = 0;
 
   @observable
-  var sintomasGravesContador = 0;
+  int sintomasGravesContador = 0;
 
   @observable
   List<String> sintomasPaciente = [];
@@ -55,7 +55,7 @@ abstract class _TestCovid19ControllerBase with Store {
     if (sintomasComunsContador > 0 &&
         (sintomasMenosComunsContador == 0 || sintomasMenosComunsContador > 0) &&
         sintomasGravesContador == 0) {
-      return "Há chances der ser covid19";
+      return "Há chances de ser covid19";
     } else if (sintomasComunsContador == 0 &&
         sintomasMenosComunsContador > 0 &&
         sintomasGravesContador == 0) {

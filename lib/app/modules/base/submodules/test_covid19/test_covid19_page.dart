@@ -52,7 +52,7 @@ class _TestCovid19PageState
                       disabledColor: Colors.grey,
                       brightness: Brightness.dark,
                     ),
-                    onChanged: (value) => controller.guardaSintomas(value),
+                    onChanged: controller.guardaSintomas,
                     choiceItems: C2Choice.listFrom<String, String>(
                       source: DataConst.listaTodosSintomas,
                       value: (i, v) => v,

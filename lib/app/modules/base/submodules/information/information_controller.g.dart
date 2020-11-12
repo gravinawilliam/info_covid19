@@ -34,6 +34,22 @@ mixin _$InformationController on _InformationControllerBase, Store {
     });
   }
 
+  final _$symptomsListAtom =
+      Atom(name: '_InformationControllerBase.symptomsList');
+
+  @override
+  ObservableStream<List<SymptomsModel>> get symptomsList {
+    _$symptomsListAtom.reportRead();
+    return super.symptomsList;
+  }
+
+  @override
+  set symptomsList(ObservableStream<List<SymptomsModel>> value) {
+    _$symptomsListAtom.reportWrite(value, super.symptomsList, () {
+      super.symptomsList = value;
+    });
+  }
+
   final _$_InformationControllerBaseActionController =
       ActionController(name: '_InformationControllerBase');
 
@@ -49,9 +65,21 @@ mixin _$InformationController on _InformationControllerBase, Store {
   }
 
   @override
+  void getListSymptoms() {
+    final _$actionInfo = _$_InformationControllerBaseActionController
+        .startAction(name: '_InformationControllerBase.getListSymptoms');
+    try {
+      return super.getListSymptoms();
+    } finally {
+      _$_InformationControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-tipsList: ${tipsList}
+tipsList: ${tipsList},
+symptomsList: ${symptomsList}
     ''';
   }
 }
