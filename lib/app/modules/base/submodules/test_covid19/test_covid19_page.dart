@@ -20,7 +20,7 @@ class _TestCovid19PageState
       appBar: AppBar(
         brightness: Brightness.dark,
         title: Text(
-          "O que você\nestá se sentindo?".toUpperCase(),
+          LocaleProvider.of(context).whatAreYouFeeling.toUpperCase(),
           textAlign: TextAlign.center,
         ),
         centerTitle: true,
@@ -55,8 +55,8 @@ class _TestCovid19PageState
                     onChanged: controller.guardaSintomas,
                     choiceItems: C2Choice.listFrom<String, String>(
                       source: DataConst.listaTodosSintomas,
-                      value: (i, v) => v,
-                      label: (i, v) => v,
+                      value: (i, v) => controller.translatesName(v),
+                      label: (i, v) => controller.translatesName(v),
                     ),
                   ),
                 );
@@ -80,7 +80,9 @@ class _TestCovid19PageState
                                         Modular.to.pop();
                                       },
                                       child: Text(
-                                        "Ok!",
+                                        LocaleProvider.of(context)
+                                            .confirm
+                                            .toUpperCase(),
                                         style:
                                             Theme.of(context).textTheme.button,
                                       ),
@@ -106,7 +108,7 @@ class _TestCovid19PageState
                     disabledTextColor: Colors.black,
                     colorBrightness: Brightness.dark,
                     child: Text(
-                      "Confirmar".toUpperCase(),
+                      LocaleProvider.of(context).confirm.toUpperCase(),
                       style: Theme.of(context).textTheme.button,
                     ),
                   );

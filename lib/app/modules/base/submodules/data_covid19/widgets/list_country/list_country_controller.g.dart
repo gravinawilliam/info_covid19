@@ -42,6 +42,20 @@ mixin _$ListCountryController on _ListCountryControllerBase, Store {
     return _$getAllCountriesAsyncAction.run(() => super.getAllCountries());
   }
 
+  final _$_ListCountryControllerBaseActionController =
+      ActionController(name: '_ListCountryControllerBase');
+
+  @override
+  String translatesName(String name) {
+    final _$actionInfo = _$_ListCountryControllerBaseActionController
+        .startAction(name: '_ListCountryControllerBase.translatesName');
+    try {
+      return super.translatesName(name);
+    } finally {
+      _$_ListCountryControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''

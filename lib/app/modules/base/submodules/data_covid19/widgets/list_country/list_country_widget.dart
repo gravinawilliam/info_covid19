@@ -50,13 +50,13 @@ class _ListCountryWidgetState
                   index: index,
                   bandeiraUrl: model.countryInfo.flag,
                   confirmados: model.cases,
-                  name: model.country,
+                  name: controller.translatesName(model.country),
                   onTap: () => Modular.to.pushNamed(
                     RoutersConst.countryDetail,
                     arguments: CountryModel(
                       active: model.active,
                       cases: model.cases,
-                      country: model.country,
+                      country: controller.translatesName(model.country),
                       countryInfo: model.countryInfo,
                       population: model.population,
                       deaths: model.deaths,

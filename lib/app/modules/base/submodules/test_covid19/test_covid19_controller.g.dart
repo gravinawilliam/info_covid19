@@ -124,6 +124,17 @@ mixin _$TestCovid19Controller on _TestCovid19ControllerBase, Store {
   }
 
   @override
+  String translatesName(String name) {
+    final _$actionInfo = _$_TestCovid19ControllerBaseActionController
+        .startAction(name: '_TestCovid19ControllerBase.translatesName');
+    try {
+      return super.translatesName(name);
+    } finally {
+      _$_TestCovid19ControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 sintomasComunsContador: ${sintomasComunsContador},

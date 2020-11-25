@@ -76,13 +76,13 @@ class CardsDataCovid extends StatelessWidget {
               CardDataCovid19(
                 color: Color(0xFF791E6E),
                 number: critical,
-                title: "critical",
+                title: LocaleProvider.of(context).critical,
                 width: 0.5,
               ),
               CardDataCovid19(
                 color: Color(0xFF000000),
                 number: tests,
-                title: "Testes",
+                title: LocaleProvider.of(context).testes,
                 width: 0.5,
               ),
             ],

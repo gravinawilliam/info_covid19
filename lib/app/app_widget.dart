@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 import 'app_controller.dart';
 import 'core/constants/constants.dart';
 
@@ -45,9 +46,12 @@ class AppWidget extends StatelessWidget {
             return Container(
               height: 250,
               width: 250,
-              color: Colors.transparent,
+              color: DarkColorsConst.primary,
               child: Center(
-                child: CircularProgressIndicator(),
+                child: LoadingIndicator(
+                  indicatorType: Indicator.ballClipRotateMultiple,
+                  color: Colors.white,
+                ),
               ),
             );
           }

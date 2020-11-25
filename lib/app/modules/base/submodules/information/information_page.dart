@@ -35,9 +35,12 @@ class _InformationPageState
                     physics: BouncingScrollPhysics(),
                     child: Column(
                       children: <Widget>[
-                        SubtitleInformation(subtitle: "Dicas"),
+                        SubtitleInformation(
+                          subtitle: LocaleProvider.of(context).tips,
+                        ),
                         ListTips(),
-                        SubtitleInformation(subtitle: "Sintomas"),
+                        SubtitleInformation(
+                            subtitle: LocaleProvider.of(context).symptoms),
                         ListSymptoms(),
                       ],
                     ),

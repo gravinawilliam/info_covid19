@@ -84,7 +84,7 @@ class _DataCovid19PageState
                 alignment: Alignment.bottomCenter,
                 child: TabBarView(
                   controller: _tabController,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   children: [
                     ListCountryWidget(),
                     ListContinentsWidget(),

@@ -56,7 +56,6 @@ abstract class _ListContinentsControllerBase with Store {
         break;
       default:
     }
-
     return name;
   }
 }

@@ -10,32 +10,32 @@ class DataConst {
     "Tosse seca",
     "Cansaço",
     "Dores e desconfortos",
-    "dor de garganta",
-    "diarreia",
-    "conjuntivite",
-    "dor de cabeça",
-    "perda de paladar ou olfato",
-    "dor ou pressão no peito",
-    "dificuldade de respirar ou falta de ar",
-    "perda de fala ou movimento"
+    "Dor de garganta",
+    "Diarreia",
+    "Conjuntivite",
+    "Dor de cabeça",
+    "Perda de paladar ou olfato",
+    "Dor ou pressão no peito",
+    "Dificuldade de respirar ou falta de ar",
+    "Perda de fala ou movimento"
   ];
   static const List<String> listaSintomasComuns = [
-    "dificuldade de respirar ou falta de ar",
-    "dor ou pressão no peito",
-    "perda de fala ou movimento"
+    "Dor ou pressão no peito",
+    "Dificuldade de respirar ou falta de ar",
+    "Perda de fala ou movimento"
   ];
   static const List<String> listaSintomasMenosComuns = [
     "Febre",
     "Tosse seca",
-    "Cansaço"
+    "Cansaço",
   ];
   static const List<String> listaSintomasGraves = [
     "Dores e desconfortos",
-    "dor de garganta",
-    "diarreia",
-    "conjuntivite",
-    "dor de cabeça",
-    "perda de paladar ou olfato",
-    "dor ou pressão no peito",
+    "Dor de garganta",
+    "Diarreia",
+    "Conjuntivite",
+    "Dor de cabeça",
+    "Perda de paladar ou olfato",
+    "Dor ou pressão no peito",
   ];
 }

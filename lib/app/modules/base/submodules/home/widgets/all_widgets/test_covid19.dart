@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,11 +27,11 @@ class TestCovid19 extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.black12,
-                blurRadius: 25.0, // soften the shadow
-                spreadRadius: 2, //extend the shadow
+                blurRadius: 25.0,
+                spreadRadius: 2,
                 offset: Offset(
-                  9, // Move to right 10  horizontally
-                  9, // Move to bottom 10 Vertically
+                  9,
+                  9,
                 ),
               )
             ],
@@ -60,7 +61,7 @@ class TestCovid19 extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                       height: ((alturaWidget - (2 * paddingWidget))) * 0.4,
                       child: Text(
-                        "Como você está se sentindo?",
+                        LocaleProvider.of(context).whatAreYouFeeling,
                         style: Theme.of(context).textTheme.subtitle1,
                         textAlign: TextAlign.center,
                       ),
@@ -76,16 +77,48 @@ class TestCovid19 extends StatelessWidget {
                             larguraWidget: larguraWidget,
                             paddingWidget: paddingWidget,
                             color: ButtonColorsConst.good,
-                            text: "Bem",
+                            text: LocaleProvider.of(context).good,
                             icon: Ionicons.ios_happy,
-                            onTap: () {},
+                            onTap: () => showAnimatedDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              builder: (context) {
+                                return CustomDialogWidget(
+                                  actions: [
+                                    FlatButton(
+                                      onPressed: () {
+                                        Modular.to.pop();
+                                      },
+                                      child: Text(
+                                        LocaleProvider.of(context)
+                                            .confirm
+                                            .toUpperCase(),
+                                        style:
+                                            Theme.of(context).textTheme.button,
+                                      ),
+                                    ),
+                                  ],
+                                  backgroundColor:
+                                      Theme.of(context).primaryColor,
+                                  content: Text(
+                                    LocaleProvider.of(context).messageGood,
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        Theme.of(context).textTheme.headline3,
+                                  ),
+                                );
+                              },
+                              animationType: DialogTransitionType.sizeFade,
+                              curve: Curves.fastOutSlowIn,
+                              duration: Duration(milliseconds: 300),
+                            ),
                           ),
                           ButtonStateTest(
                             alturaWidget: alturaWidget,
                             larguraWidget: larguraWidget,
                             paddingWidget: paddingWidget,
                             color: ButtonColorsConst.bad,
-                            text: "Mal",
+                            text: LocaleProvider.of(context).bad,
                             icon: Ionicons.ios_sad,
                             onTap: () => Modular.to.pushNamed(
                               RoutersConst.testCovid19,
