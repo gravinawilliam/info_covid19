@@ -81,7 +81,7 @@ class _ListTipsState extends ModularState<ListTips, InformationController> {
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headline2,
                     ),
-                    SvgPicture.asset(model.urlImage),
+                    SvgPicture.network(model.urlImage),
                   ],
                 ),
               );
